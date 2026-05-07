@@ -1,6 +1,95 @@
-body {
-    font-family: Arial, sans-serif;
+:root {
+    --primary: #ff6f91;
+    --primary-dark: #e85d7f;
+    --secondary: #ffb7b2;
+    --accent: #ffc75f;
+    --dark: #2d3436;
+    --light: #fff5f7;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.5);
+    --glass-shadow: 0 8px 32px 0 rgba(255, 111, 145, 0.15);
+}
+
+* {
     margin: 0;
+<<<<<<< HEAD
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+h1, h2, h3, .logo h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Background Blobs */
+.blob {
+    position: absolute;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.blob-1 {
+    top: -100px;
+    left: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+}
+
+.blob-2 {
+    top: 40%;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+}
+
+/* Glassmorphism Header */
+.glass-header {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin: 0;
+}
+
+.logo .icon {
+    font-size: 2rem;
+=======
     background-color: #fff5f7;
     color: #333;
     text-align: center;
@@ -17,11 +106,23 @@ header {
 nav {
     background-color: #ffb7b2;
     padding: 15px;
+>>>>>>> main
 }
 
 nav ul {
     list-style: none;
     display: flex;
+<<<<<<< HEAD
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+=======
     justify-content: center;
     padding: 0;
     margin: 0;
@@ -36,12 +137,347 @@ nav ul li a {
     color: #333;
     font-weight: bold;
     transition: 0.3s;
+>>>>>>> main
 }
 
-nav ul li a:hover {
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+.cta-btn, .btn-primary, .btn-secondary {
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+}
+
+.cta-btn, .btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     color: white;
+    box-shadow: 0 4px 15px rgba(255, 111, 145, 0.4);
 }
 
+<<<<<<< HEAD
+.cta-btn:hover, .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 111, 145, 0.6);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background: var(--light);
+    transform: translateY(-2px);
+}
+
+/* Main Layout */
+main {
+    margin-top: 100px;
+    padding: 0 5%;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary);
+    font-style: italic;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+    max-width: 500px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+}
+
+.floating-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.glass-badge {
+    position: absolute;
+    bottom: 30px;
+    left: -30px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 15px 25px;
+    border-radius: 20px;
+    box-shadow: var(--glass-shadow);
+}
+
+.stars {
+    color: var(--accent);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+/* Sections */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary-dark);
+}
+
+.catalog-section {
+    padding: 80px 0;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: var(--glass-shadow);
+    transition: transform 0.3s;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img-wrapper {
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.glass-card:hover .card-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.product-card ul {
+    list-style: none;
+}
+
+.product-card li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.product-card li::before {
+    content: '✨';
+    position: absolute;
+    left: 0;
+    font-size: 0.8rem;
+    top: 4px;
+}
+
+.banner {
+    margin: 80px 0;
+    border-radius: 30px;
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(255, 111, 145, 0.1), rgba(255, 199, 95, 0.1));
+    border: 1px solid var(--glass-border);
+}
+
+.banner h2 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.banner .subtitle {
+    font-weight: 400;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Contact */
+.contact-section {
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.form-container p {
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.custom-form .form-group {
+    margin-bottom: 20px;
+}
+
+.custom-form input, .custom-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.8);
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.custom-form input:focus, .custom-form textarea:focus {
+    border-color: var(--primary);
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 60px 5% 20px;
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-info h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .hero-actions {
+        justify-content: center;
+    }
+    nav ul {
+        display: none;
+    }
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+    .glass-badge {
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+    }
+=======
 /* TARJETAS */
 section {
     width: 80%;
@@ -74,4 +510,5 @@ footer {
     background-color: #ff9aa2;
     color: white;
     margin-top: 20px;
+>>>>>>> main
 }

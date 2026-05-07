@@ -2,79 +2,163 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pastelería Dulce Encanto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelería Dulce Encanto | Arte en cada bocado</title>
+    <meta name="description" content="Descubre Pastelería Dulce Encanto, donde creamos momentos dulces e inolvidables con nuestras tortas, cupcakes y galletas premium.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <h1>🍰 Pastelería Dulce Encanto</h1>
-    <p>Delicias hechas con amor</p>
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<header class="glass-header">
+    <div class="logo">
+        <span class="icon">🍰</span>
+        <h1>Dulce Encanto</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#especiales">Especiales</a></li>
+            <li><a href="#pedidos">Pedidos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <button class="cta-btn">Hacer Pedido</button>
 </header>
 
-<nav>
-    <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#especiales">Especiales</a></li>
-        <li><a href="#pedidos">Pedidos</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-    </ul>
-</nav>
+<main>
+    <section id="inicio" class="hero-section">
+        <div class="hero-content fade-in">
+            <h2>Arte en cada <span class="highlight">bocado</span></h2>
+            <p>Somos una pastelería premium dedicada a crear momentos dulces e inolvidables para tus ocasiones más especiales.</p>
+            <div class="hero-actions">
+                <a href="#catalogo" class="btn-primary">Explorar Catálogo</a>
+                <a href="#pedidos" class="btn-secondary">Pedidos Especiales</a>
+            </div>
+        </div>
+        <div class="hero-image fade-in">
+            <!-- Decorative image -->
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Torta de fresa premium" class="floating-img">
+            <div class="glass-badge">
+                <span class="stars">★★★★★</span>
+                <p>100% Calidad Artesanal</p>
+            </div>
+        </div>
+    </section>
 
-<section id="inicio">
-    <h2>Bienvenidos</h2>
-    <p>Somos una pastelería dedicada a crear momentos dulces e inolvidables.</p>
-</section>
+    <section id="catalogo" class="catalog-section">
+        <h2 class="section-title">Nuestro Catálogo</h2>
+        
+        <div class="catalog-grid">
+            <div class="glass-card product-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Tortas">
+                </div>
+                <h3>🎂 Tortas Premium</h3>
+                <ul>
+                    <li>Torta de Chocolate Belga</li>
+                    <li>Vainilla Madagascar</li>
+                    <li>Red Velvet Clásico</li>
+                </ul>
+            </div>
 
-<section id="catalogo">
-    <h2>Catálogo</h2>
+            <div class="glass-card product-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cupcakes">
+                </div>
+                <h3>🧁 Cupcakes</h3>
+                <ul>
+                    <li>Frutos Rojos</li>
+                    <li>Chocolate y Avellana</li>
+                    <li>Limón y Merengue</li>
+                </ul>
+            </div>
 
-    <h3>🎂 Tortas</h3>
-    <ul>
-        <li>Torta de chocolate</li>
-        <li>Torta de vainilla</li>
-        <li>Torta personalizada</li>
-    </ul>
+            <div class="glass-card product-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Galletas">
+                </div>
+                <h3>🍪 Galletas</h3>
+                <ul>
+                    <li>Chispas de Chocolate</li>
+                    <li>Avena y Miel</li>
+                    <li>Decoradas Temáticas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <h3>🧁 Cupcakes</h3>
-    <ul>
-        <li>Red velvet</li>
-        <li>Chocolate</li>
-        <li>Vainilla</li>
-    </ul>
+    <div class="banner glass-panel">
+        <section id="especiales">
+            <div class="banner-content">
+                <h2>Línea Saludable</h2>
+                <p>Opciones Veganas • Sin Azúcar • Sin Gluten</p>
+                <p class="subtitle">Disfruta sin preocupaciones con nuestros productos adaptados a tu estilo de vida.</p>
+            </div>
+        </section>
+    </div>
 
-    <h3>🍪 Galletas</h3>
-    <ul>
-        <li>Galletas decoradas</li>
-        <li>Galletas con chispas</li>
-    </ul>
-</section>
+    <section id="pedidos" class="contact-section">
+        <div class="glass-card form-container">
+            <h2>¿Tienes un evento especial?</h2>
+            <p>Contáctanos para diseñar una mesa de dulces única.</p>
+            <form class="custom-form" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <input type="text" placeholder="Tu Nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Tu Correo" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Cuéntanos sobre tu evento..." rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary w-100">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+</main>
 
-<section id="especiales">
-    <h2>Productos Especiales</h2>
-    <ul>
-        <li>Opciones veganas</li>
-        <li>Sin azúcar</li>
-        <li>Sin gluten</li>
-    </ul>
-</section>
-
-<section id="pedidos">
-    <h2>Pedidos Personalizados</h2>
-    <p>Contáctanos para diseños únicos para tus eventos.</p>
-</section>
-
-<section id="contacto">
-    <h2>Contacto</h2>
-    <p>📍 Dirección: Tu ciudad</p>
-    <p>📞 Teléfono: 123 456 789</p>
-    <p>📧 Email: contacto@pasteleria.com</p>
-</section>
-
-<footer>
-    <p>© 2026 Pastelería Dulce Encanto</p>
+<footer id="contacto">
+    <div class="footer-content glass-footer">
+        <div class="footer-info">
+            <h3>Dulce Encanto</h3>
+            <p>Creando momentos felices desde 2015.</p>
+        </div>
+        <div class="footer-contact">
+            <p>📍 Dirección: Medellín, Colombia</p>
+            <p>📞 Teléfono: +57 300 123 4567</p>
+            <p>📧 Email: contacto@dulceencanto.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Pastelería Dulce Encanto. Todos los derechos reservados.</p>
+    </div>
 </footer>
+
+<script>
+    // Simple fade-in animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    document.querySelectorAll('.glass-card, .fade-in, .banner').forEach((el) => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        observer.observe(el);
+    });
+</script>
 
 </body>
 </html>
