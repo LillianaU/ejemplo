@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Lenguaje de Señas | Comunicación Inclusiva</title>
+    <meta name="description" content="Aprende lenguaje de señas con nuestros cursos iniciales. Programas diseñados para personas sordas, familiares y profesionales que desean comunicarse de manera inclusiva.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<header class="glass-header">
+    <div class="logo">
+        <span class="icon">🤟</span>
+        <h1>Lenguaje de Señas</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#niveles">Niveles</a></li>
+            <li><a href="#inscripcion">Inscripción</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <button class="cta-btn">Inscribirme</button>
+</header>
+
+<main>
+    <section id="inicio" class="hero-section">
+        <div class="hero-content fade-in">
+            <h2>Comunicación <span class="highlight">Inclusiva</span></h2>
+            <p>Aprende lenguaje de señas con nuestros cursos iniciales. Programas diseñados para personas sordas, familiares y profesionales que desean comunicarse de manera inclusiva.</p>
+            <div class="hero-actions">
+                <a href="#cursos" class="btn-primary">Ver Cursos</a>
+                <a href="#inscripcion" class="btn-secondary">Inscribirme Ahora</a>
+            </div>
+        </div>
+        <div class="hero-image fade-in">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Persona señalando en lenguaje de señas" class="floating-img">
+            <div class="glass-badge">
+                <span class="stars">★★★★★</span>
+                <p>100% Inclusivo</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cursos" class="catalog-section">
+        <h2 class="section-title">Nuestros Cursos</h2>
+        
+        <div class="catalog-grid">
+            <div class="glass-card product-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Curso Básico">
+                </div>
+                <h3>📚 Curso Básico</h3>
+                <ul>
+                    <li>Alfabeto Manual</li>
+                    <li>Saludos y Presentaciones</li>
+                    <li>Números del 1 al 100</li>
+                    <li>Vocabulario Cotidiano</li>
+                </ul>
+            </div>
+
+            <div class="glass-card product-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Curso Intermedio">
+                </div>
+                <h3>📖 Curso Intermedio</h3>
+                <ul>
+                    <li>Conversaciones Básicas</li>
+                    <li>Expresiones de Tiempo</li>
+                    <li>Verbos en Presente</li>
+                    <li>Descripción de Personas</li>
+                </ul>
+            </div>
+
+            <div class="glass-card product-card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Curso Avanzado">
+                </div>
+                <h3>🎓 Curso Avanzado</h3>
+                <ul>
+                    <li>Narración de Historias</li>
+                    <li>Debates y Discusiones</li>
+                    <li>Literatura en Lenguaje de Señas</li>
+                    <li>Interpretación Simultánea</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="banner glass-panel">
+        <section id="niveles">
+            <div class="banner-content">
+                <h2>Niveles de Aprendizaje</h2>
+                <p>Principiante • Intermedio • Avanzado</p>
+                <p class="subtitle">Cada nivel incluye certificación oficial y material didáctico digital.</p>
+            </div>
+        </section>
+    </div>
+
+    <section id="inscripcion" class="contact-section">
+        <div class="glass-card form-container">
+            <h2>¿Listo para aprender?</h2>
+            <p>Inscríbete en el curso que mejor se adapte a tus necesidades.</p>
+            <form class="custom-form" onsubmit="event.preventDefault();">
+                <div class="form-group">
+                    <input type="text" placeholder="Tu Nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Tu Correo" required>
+                </div>
+                <div class="form-group">
+                    <select style="width: 100%; padding: 15px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.1); background: rgba(255,255,255,0.8); font-family: 'Outfit', sans-serif; font-size: 1rem;">
+                        <option value="">Selecciona un nivel</option>
+                        <option value="basico">Curso Básico</option>
+                        <option value="intermedio">Curso Intermedio</option>
+                        <option value="avanzado">Curso Avanzado</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary w-100">Enviar Inscripción</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer id="contacto">
+    <div class="footer-content glass-footer">
+        <div class="footer-info">
+            <h3>Lenguaje de Señas</h3>
+            <p>Promoviendo la comunicación inclusiva desde 2020.</p>
+        </div>
+        <div class="footer-contact">
+            <p>📍 Dirección: Bogotá, Colombia</p>
+            <p>📞 Teléfono: +57 300 987 6543</p>
+            <p>📧 Email: cursos@lenguajedesenas.com</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Cursos de Lenguaje de Señas. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    // Simple fade-in animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    document.querySelectorAll('.glass-card, .fade-in, .banner').forEach((el) => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>
