@@ -1,11 +1,748 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lengua de Senas para Aprender Juntos</title>
+    <style>
+        :root {
+            --ink: #17212b;
+            --muted: #4c5b68;
+            --paper: #f7fbff;
+            --sky: #d9f0ff;
+            --mint: #dff8e8;
+            --coral: #ffddc8;
+            --gold: #ffe999;
+            --blue: #2d6cdf;
+            --green: #20966f;
+            --orange: #e56b32;
+            --line: rgba(23, 33, 43, 0.14);
+            --shadow: 0 18px 50px rgba(23, 33, 43, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(255, 233, 153, 0.45), transparent 32rem),
+                linear-gradient(180deg, #f7fbff 0%, #eef8f2 100%);
+            line-height: 1.5;
+        }
+
+        header {
+            min-height: 92vh;
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem clamp(1rem, 5vw, 5rem) 3rem;
+        }
+
+        .hero-copy {
+            max-width: 760px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0 0 1rem;
+            padding: 0.35rem 0.7rem;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.78);
+            color: #315168;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        h1 {
+            margin: 0;
+            max-width: 760px;
+            font-size: clamp(2.45rem, 6vw, 5.3rem);
+            line-height: 0.98;
+            letter-spacing: 0;
+        }
+
+        .lead {
+            margin: 1.25rem 0 1.75rem;
+            max-width: 620px;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0.75rem 1rem;
+            border: 0;
+            border-radius: 8px;
+            color: #fff;
+            background: var(--blue);
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 10px 24px rgba(45, 108, 223, 0.22);
+            cursor: pointer;
+        }
+
+        .button.secondary {
+            color: var(--ink);
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: none;
+        }
+
+        .stage {
+            position: relative;
+            min-height: 500px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            background:
+                linear-gradient(145deg, rgba(217, 240, 255, 0.85), rgba(223, 248, 232, 0.92)),
+                #fff;
+            box-shadow: var(--shadow);
+        }
+
+        #three-scene {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            display: block;
+        }
+
+        .scene-label {
+            position: absolute;
+            left: 1rem;
+            right: 1rem;
+            bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            color: var(--ink);
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            font-weight: 700;
+        }
+
+        .scene-label button {
+            flex: 0 0 auto;
+            border: 0;
+            border-radius: 8px;
+            min-height: 38px;
+            padding: 0.55rem 0.8rem;
+            background: var(--green);
+            color: #fff;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 0 clamp(1rem, 5vw, 5rem) 4rem;
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            margin: 0 0 1rem;
+            max-width: 780px;
+            font-size: clamp(1.8rem, 3.6vw, 3rem);
+            line-height: 1.08;
+        }
+
+        .section-text {
+            max-width: 760px;
+            margin: 0 0 1.4rem;
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .info-card,
+        .sign-card,
+        .challenge {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.86);
+            box-shadow: 0 10px 26px rgba(23, 33, 43, 0.08);
+        }
+
+        .info-card {
+            padding: 1.1rem;
+        }
+
+        .info-card h3,
+        .challenge h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .info-card p,
+        .challenge p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .sign-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .sign-card {
+            overflow: hidden;
+        }
+
+        .gif-panel {
+            position: relative;
+            height: 190px;
+            display: grid;
+            place-items: center;
+            background: var(--sky);
+            overflow: hidden;
+        }
+
+        .gif-panel::before,
+        .gif-panel::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            opacity: 0.78;
+            animation: floatDot 2.4s ease-in-out infinite;
+        }
+
+        .gif-panel::before {
+            width: 86px;
+            height: 86px;
+            left: 12%;
+            top: 18%;
+            background: var(--gold);
+        }
+
+        .gif-panel::after {
+            width: 64px;
+            height: 64px;
+            right: 14%;
+            bottom: 14%;
+            background: var(--coral);
+            animation-delay: -1.1s;
+        }
+
+        .hand-gif {
+            position: relative;
+            width: 112px;
+            height: 132px;
+            z-index: 1;
+            animation: wave 1.45s ease-in-out infinite;
+            transform-origin: 52% 88%;
+        }
+
+        .palm {
+            position: absolute;
+            left: 29px;
+            bottom: 10px;
+            width: 58px;
+            height: 72px;
+            border-radius: 28px 28px 22px 22px;
+            background: #f0b57c;
+            border: 3px solid rgba(23, 33, 43, 0.22);
+        }
+
+        .finger {
+            position: absolute;
+            bottom: 70px;
+            width: 20px;
+            height: 58px;
+            border-radius: 16px;
+            background: #f4c08b;
+            border: 3px solid rgba(23, 33, 43, 0.22);
+            transform-origin: bottom center;
+        }
+
+        .finger.one { left: 14px; height: 48px; transform: rotate(-16deg); }
+        .finger.two { left: 34px; height: 66px; }
+        .finger.three { left: 56px; height: 63px; }
+        .finger.four { left: 78px; height: 50px; transform: rotate(14deg); }
+        .thumb {
+            position: absolute;
+            left: 14px;
+            bottom: 40px;
+            width: 24px;
+            height: 54px;
+            border-radius: 18px;
+            background: #eaa66d;
+            border: 3px solid rgba(23, 33, 43, 0.22);
+            transform: rotate(-48deg);
+        }
+
+        .hello .hand-gif { animation-name: wave; }
+        .thanks .hand-gif { animation-name: tapForward; }
+        .friend .hand-gif { animation-name: linkMove; }
+        .learn .hand-gif { animation-name: sparkleMove; }
+        .thanks .finger.one,
+        .thanks .finger.four { transform: rotate(0deg); }
+        .friend .thumb { transform: rotate(-28deg); }
+        .learn .finger.two,
+        .learn .finger.three { height: 70px; }
+
+        .sign-content {
+            padding: 1rem;
+        }
+
+        .sign-content h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1.25rem;
+        }
+
+        .sign-content p {
+            margin: 0;
+            color: var(--muted);
+        }
+
+        .visual-band {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        #d3-chart {
+            width: 100%;
+            min-height: 340px;
+        }
+
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .challenge {
+            padding: 1.1rem;
+        }
+
+        .number {
+            display: inline-grid;
+            place-items: center;
+            width: 36px;
+            height: 36px;
+            margin-bottom: 0.7rem;
+            border-radius: 8px;
+            background: var(--ink);
+            color: #fff;
+            font-weight: 900;
+        }
+
+        footer {
+            padding: 2rem clamp(1rem, 5vw, 5rem);
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.68);
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(-9deg) translateY(0); }
+            50% { transform: rotate(13deg) translateY(-8px); }
+        }
+
+        @keyframes tapForward {
+            0%, 100% { transform: rotate(0deg) translate(0, 0) scale(1); }
+            50% { transform: rotate(-10deg) translate(10px, -8px) scale(1.04); }
+        }
+
+        @keyframes linkMove {
+            0%, 100% { transform: rotate(-5deg) translateX(-8px); }
+            50% { transform: rotate(6deg) translateX(10px); }
+        }
+
+        @keyframes sparkleMove {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-12px) scale(1.06); }
+        }
+
+        @keyframes floatDot {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-18px) scale(1.08); }
+        }
+
+        @media (max-width: 980px) {
+            header,
+            .visual-band {
+                grid-template-columns: 1fr;
+            }
+
+            .info-grid,
+            .challenge-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sign-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 620px) {
+            header {
+                padding-top: 1rem;
+            }
+
+            .stage,
+            #three-scene {
+                min-height: 390px;
+            }
+
+            .sign-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scene-label {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .visual-band {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <header>
+        <div class="hero-copy">
+            <p class="eyebrow">Comunicacion visual para aprender juntos</p>
+            <h1>Lengua de senas para ninos curiosos</h1>
+            <p class="lead">Una pagina para descubrir que las manos, la cara y el cuerpo tambien pueden conversar. Pensada para estudiantes de 11 anos, con ideas sencillas, movimiento y retos cortos.</p>
+            <div class="hero-actions">
+                <a class="button" href="#senas">Ver senas basicas</a>
+                <a class="button secondary" href="#retos">Ir a los retos</a>
+            </div>
+        </div>
+
+        <div class="stage" aria-label="Mano 3D interactiva">
+            <canvas id="three-scene"></canvas>
+            <div class="scene-label">
+                <span>Gira la mano 3D y observa como la comunicacion tambien vive en el movimiento.</span>
+                <button id="change-pose" type="button">Cambiar pose</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section aria-labelledby="que-es">
+            <h2 class="section-title" id="que-es">Que es la lengua de senas</h2>
+            <p class="section-text">La lengua de senas es una lengua completa. No es solo mover las manos: tambien usa expresiones de la cara, direccion de la mirada, postura y espacio. Muchas personas sordas la usan para estudiar, jugar, contar historias y participar en su comunidad.</p>
+            <div class="info-grid">
+                <article class="info-card">
+                    <h3>Tiene reglas</h3>
+                    <p>Como el espanol o el ingles, tiene orden, vocabulario y formas correctas de expresar ideas.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Usa todo el cuerpo</h3>
+                    <p>Las cejas, los hombros y la mirada ayudan a preguntar, afirmar o mostrar emociones.</p>
+                </article>
+                <article class="info-card">
+                    <h3>Cambia por pais</h3>
+                    <p>Existen diferentes lenguas de senas. No todas las comunidades usan las mismas senas.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="senas" aria-labelledby="senas-title">
+            <h2 class="section-title" id="senas-title">Senas basicas para practicar</h2>
+            <p class="section-text">Estos GIF animados son una guia visual sencilla. Practica despacio, mira de frente a tu companero y acompana cada sena con una expresion amable.</p>
+            <div class="sign-grid">
+                <article class="sign-card hello">
+                    <div class="gif-panel" role="img" aria-label="GIF animado de una mano saludando">
+                        <div class="hand-gif" aria-hidden="true">
+                            <span class="finger one"></span>
+                            <span class="finger two"></span>
+                            <span class="finger three"></span>
+                            <span class="finger four"></span>
+                            <span class="thumb"></span>
+                            <span class="palm"></span>
+                        </div>
+                    </div>
+                    <div class="sign-content">
+                        <h3>Hola</h3>
+                        <p>Levanta la mano y mueve suavemente la muneca, como un saludo cercano.</p>
+                    </div>
+                </article>
+
+                <article class="sign-card thanks">
+                    <div class="gif-panel" role="img" aria-label="GIF animado de una mano diciendo gracias">
+                        <div class="hand-gif" aria-hidden="true">
+                            <span class="finger one"></span>
+                            <span class="finger two"></span>
+                            <span class="finger three"></span>
+                            <span class="finger four"></span>
+                            <span class="thumb"></span>
+                            <span class="palm"></span>
+                        </div>
+                    </div>
+                    <div class="sign-content">
+                        <h3>Gracias</h3>
+                        <p>Lleva la mano desde la barbilla hacia adelante, con una sonrisa natural.</p>
+                    </div>
+                </article>
+
+                <article class="sign-card friend">
+                    <div class="gif-panel" role="img" aria-label="GIF animado de una mano representando amigo">
+                        <div class="hand-gif" aria-hidden="true">
+                            <span class="finger one"></span>
+                            <span class="finger two"></span>
+                            <span class="finger three"></span>
+                            <span class="finger four"></span>
+                            <span class="thumb"></span>
+                            <span class="palm"></span>
+                        </div>
+                    </div>
+                    <div class="sign-content">
+                        <h3>Amigo</h3>
+                        <p>Une y separa las manos con cuidado, mostrando conexion y confianza.</p>
+                    </div>
+                </article>
+
+                <article class="sign-card learn">
+                    <div class="gif-panel" role="img" aria-label="GIF animado de una mano aprendiendo">
+                        <div class="hand-gif" aria-hidden="true">
+                            <span class="finger one"></span>
+                            <span class="finger two"></span>
+                            <span class="finger three"></span>
+                            <span class="finger four"></span>
+                            <span class="thumb"></span>
+                            <span class="palm"></span>
+                        </div>
+                    </div>
+                    <div class="sign-content">
+                        <h3>Aprender</h3>
+                        <p>Imagina que tomas una idea y la llevas hacia tu cabeza para recordarla.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section aria-labelledby="visual-title">
+            <div class="visual-band">
+                <div>
+                    <h2 class="section-title" id="visual-title">Partes que ayudan a comunicar</h2>
+                    <p class="section-text">D3 muestra cuanto participa cada parte del cuerpo cuando una persona se comunica con senas. Las manos son importantes, pero no trabajan solas.</p>
+                </div>
+                <div id="d3-chart" aria-label="Grafico de burbujas sobre elementos de la comunicacion en lengua de senas"></div>
+            </div>
+        </section>
+
+        <section id="retos" aria-labelledby="retos-title">
+            <h2 class="section-title" id="retos-title">Retos de 5 minutos</h2>
+            <div class="challenge-grid">
+                <article class="challenge">
+                    <span class="number">1</span>
+                    <h3>Saluda sin voz</h3>
+                    <p>Haz contacto visual, saluda con la mano y espera la respuesta de tu companero.</p>
+                </article>
+                <article class="challenge">
+                    <span class="number">2</span>
+                    <h3>Cuenta una emocion</h3>
+                    <p>Elige alegria, sorpresa o duda. Usa la cara antes de usar las manos.</p>
+                </article>
+                <article class="challenge">
+                    <span class="number">3</span>
+                    <h3>Pregunta con respeto</h3>
+                    <p>Si no entiendes una sena, pide que la repitan mirando a la persona, no a sus manos solamente.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        Aprende con respeto: cada comunidad puede tener senas diferentes. Lo mejor es practicar con personas sordas, profesores o materiales de tu pais.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.min.js"></script>
+    <script>
+        const canvas = document.getElementById("three-scene");
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xd9f0ff);
+
+        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+        camera.position.set(0, 1.6, 7);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        const skin = new THREE.MeshStandardMaterial({ color: 0xf0b57c, roughness: 0.72, metalness: 0.03 });
+        const accent = new THREE.MeshStandardMaterial({ color: 0x2d6cdf, roughness: 0.55 });
+        const palm = new THREE.Mesh(new THREE.BoxGeometry(1.65, 2.15, 0.72, 6, 6, 6), skin);
+        palm.position.y = -0.65;
+        palm.scale.x = 0.92;
+        group.add(palm);
+
+        const fingers = [];
+        const fingerData = [
+            [-0.72, 0.82, 0.36, 1.42, -0.18],
+            [-0.25, 1.05, 0.38, 1.92, -0.05],
+            [0.24, 1.03, 0.38, 1.84, 0.04],
+            [0.70, 0.82, 0.34, 1.42, 0.16]
+        ];
+
+        fingerData.forEach(([x, y, width, height, angle]) => {
+            const finger = new THREE.Mesh(new THREE.CapsuleGeometry(width / 2, height, 10, 18), skin);
+            finger.position.set(x, y, 0);
+            finger.rotation.z = angle;
+            fingers.push(finger);
+            group.add(finger);
+        });
+
+        const thumb = new THREE.Mesh(new THREE.CapsuleGeometry(0.22, 1.1, 10, 18), skin);
+        thumb.position.set(-1.0, -0.25, 0.06);
+        thumb.rotation.z = 0.9;
+        group.add(thumb);
+
+        const wrist = new THREE.Mesh(new THREE.CylinderGeometry(0.48, 0.6, 1.05, 28), skin);
+        wrist.position.set(0, -2.05, 0);
+        group.add(wrist);
+
+        const ring = new THREE.Mesh(new THREE.TorusGeometry(1.35, 0.025, 12, 80), accent);
+        ring.position.set(0, -0.05, -0.55);
+        ring.rotation.x = Math.PI / 2;
+        group.add(ring);
+
+        const floor = new THREE.Mesh(
+            new THREE.CircleGeometry(3.2, 80),
+            new THREE.MeshStandardMaterial({ color: 0xffffff, transparent: true, opacity: 0.36 })
+        );
+        floor.position.y = -2.65;
+        floor.rotation.x = -Math.PI / 2;
+        scene.add(floor);
+
+        scene.add(new THREE.HemisphereLight(0xffffff, 0x70a4b8, 2.2));
+        const key = new THREE.DirectionalLight(0xffffff, 2.6);
+        key.position.set(4, 6, 5);
+        scene.add(key);
+
+        const poses = [
+            [0, 0, 0, 0],
+            [-0.7, 0.1, 0.1, 0.65],
+            [0.25, -0.05, -0.05, -0.25]
+        ];
+        let poseIndex = 0;
+        document.getElementById("change-pose").addEventListener("click", () => {
+            poseIndex = (poseIndex + 1) % poses.length;
+        });
+
+        let isDragging = false;
+        let lastX = 0;
+        canvas.addEventListener("pointerdown", (event) => {
+            isDragging = true;
+            lastX = event.clientX;
+            canvas.setPointerCapture(event.pointerId);
+        });
+        canvas.addEventListener("pointermove", (event) => {
+            if (!isDragging) return;
+            group.rotation.y += (event.clientX - lastX) * 0.012;
+            lastX = event.clientX;
+        });
+        canvas.addEventListener("pointerup", () => {
+            isDragging = false;
+        });
+
+        function resizeThree() {
+            const rect = canvas.getBoundingClientRect();
+            renderer.setSize(rect.width, rect.height, false);
+            camera.aspect = rect.width / rect.height;
+            camera.updateProjectionMatrix();
+        }
+
+        function animate(time) {
+            resizeThree();
+            const t = time * 0.001;
+            group.rotation.x = Math.sin(t * 0.8) * 0.08;
+            group.rotation.z = Math.sin(t * 0.65) * 0.05;
+            group.position.y = Math.sin(t * 1.6) * 0.08;
+            const currentPose = poses[poseIndex];
+            fingers.forEach((finger, index) => {
+                finger.rotation.x += (currentPose[index] - finger.rotation.x) * 0.08;
+            });
+            ring.rotation.z += 0.008;
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        }
+        requestAnimationFrame(animate);
+
+        const chartData = [
+            { name: "Manos", value: 36, color: "#2d6cdf" },
+            { name: "Cara", value: 27, color: "#e56b32" },
+            { name: "Mirada", value: 18, color: "#20966f" },
+            { name: "Cuerpo", value: 19, color: "#f0b429" }
+        ];
+
+        const chart = d3.select("#d3-chart");
+        const svg = chart.append("svg").attr("viewBox", "0 0 620 340").attr("role", "img");
+        const pack = d3.pack().size([620, 340]).padding(18);
+        const root = d3.hierarchy({ children: chartData }).sum((d) => d.value);
+        const nodes = pack(root).leaves();
+
+        const bubble = svg.selectAll("g")
+            .data(nodes)
+            .join("g")
+            .attr("transform", (d) => `translate(${d.x}, ${d.y})`);
+
+        bubble.append("circle")
+            .attr("r", 0)
+            .attr("fill", (d) => d.data.color)
+            .attr("opacity", 0.86)
+            .transition()
+            .duration(900)
+            .delay((d, i) => i * 110)
+            .attr("r", (d) => d.r);
+
+        bubble.append("text")
+            .attr("text-anchor", "middle")
+            .attr("dy", "-0.1em")
+            .attr("fill", "#17212b")
+            .attr("font-weight", "900")
+            .attr("font-size", (d) => Math.max(15, d.r / 3.2))
+            .text((d) => d.data.name);
+
+        bubble.append("text")
+            .attr("text-anchor", "middle")
+            .attr("dy", "1.35em")
+            .attr("fill", "#17212b")
+            .attr("font-weight", "700")
+            .attr("font-size", (d) => Math.max(13, d.r / 4.2))
+            .text((d) => `${d.data.value}%`);
+    </script>
 </body>
 </html>
