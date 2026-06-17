@@ -52,15 +52,7 @@ lumora/
 
 ## Cómo ejecutar
 
-1.  Abre el archivo `index.html` directamente en tu navegador, o
-2.  Usa un servidor local (Live Server, http-server, etc.):
-    ```bash
-    npx serve .
-    ```
-    o
-    ```bash
-    npx live-server .
-    ```
+Abre el proyecto con **Live Server** desde VS Code (clic derecho en `index.html` > Open with Live Server) o simplemente abre `index.html` directo en tu navegador.
 
 No requiere instalación de dependencias ni configuración adicional.
 
