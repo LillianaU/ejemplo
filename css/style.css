@@ -77,6 +77,50 @@ a {
   transition: var(--transition);
 }
 
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-secondary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card {
+  animation: slideUp 0.5s ease both;
+}
+
+.product-card:nth-child(1) { animation-delay: 0.05s; }
+.product-card:nth-child(2) { animation-delay: 0.1s; }
+.product-card:nth-child(3) { animation-delay: 0.15s; }
+.product-card:nth-child(4) { animation-delay: 0.2s; }
+.product-card:nth-child(5) { animation-delay: 0.25s; }
+.product-card:nth-child(6) { animation-delay: 0.3s; }
+.product-card:nth-child(7) { animation-delay: 0.35s; }
+.product-card:nth-child(8) { animation-delay: 0.4s; }
+.product-card:nth-child(9) { animation-delay: 0.45s; }
+.product-card:nth-child(10) { animation-delay: 0.5s; }
+.product-card:nth-child(11) { animation-delay: 0.55s; }
+.product-card:nth-child(12) { animation-delay: 0.6s; }
+.product-card:nth-child(13) { animation-delay: 0.65s; }
+.product-card:nth-child(14) { animation-delay: 0.7s; }
+
 ul { list-style: none; }
 
 .container {
@@ -1291,6 +1335,34 @@ ul { list-style: none; }
   .catalog__filters {
     justify-content: center;
   }
+
+  .cart__item-quantity button {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .product-detail__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-detail__quantity {
+    justify-content: center;
+  }
+
+  .product-detail__thumbnails {
+    gap: 8px;
+  }
+
+  .product-detail__thumb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .header__nav-list {
+    z-index: 999;
+  }
 }
 
 /* Small Mobile */
@@ -1301,5 +1373,13 @@ ul { list-style: none; }
 
   .features-strip {
     grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .about__value-card {
+    padding: 24px 16px;
   }
 }
