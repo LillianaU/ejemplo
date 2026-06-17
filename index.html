@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lumora - Ilumina tu espacio con elegancia">
+  <meta name="description" content="Lumora - Ilumina tu espacio con elegancia. Descubre nuestra colección de lámparas y decoración.">
   <title>Lumora - Ilumina tu espacio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,17 +12,88 @@
 </head>
 <body>
   <div id="header-placeholder"></div>
+
   <main>
     <section class="hero">
       <div class="hero__content">
         <h1 class="hero__title">Lumora</h1>
         <p class="hero__subtitle">Ilumina tu espacio con elegancia</p>
-        <a href="pages/catalog.html" class="btn btn--primary">Descubrir Colección</a>
+        <a href="pages/catalog.html" class="btn btn--primary btn--lg">Descubrir Colección</a>
+      </div>
+    </section>
+
+    <section class="features-strip container">
+      <div class="features-strip__item">
+        <div class="features-strip__icon">✨</div>
+        <h4>Diseño Exclusivo</h4>
+        <p>Piezas únicas seleccionadas para ti</p>
+      </div>
+      <div class="features-strip__item">
+        <div class="features-strip__icon">📦</div>
+        <h4>Envío Seguro</h4>
+        <p>Empaquetamos con el mayor cuidado</p>
+      </div>
+      <div class="features-strip__item">
+        <div class="features-strip__icon">🔄</div>
+        <h4>Cambios Fáciles</h4>
+        <p>30 días para devoluciones</p>
+      </div>
+      <div class="features-strip__item">
+        <div class="features-strip__icon">💬</div>
+        <h4>Atención Personal</h4>
+        <p>Soporte dedicado para ti</p>
+      </div>
+    </section>
+
+    <section class="featured">
+      <div class="container">
+        <h2 class="section__title">Productos Destacados</h2>
+        <p class="section__subtitle">Nuestra selección especial para iluminar tu hogar</p>
+        <div class="featured__grid" id="featured-grid"></div>
+        <div class="featured__cta">
+          <a href="pages/catalog.html" class="btn btn--secondary btn--lg">Ver Todos los Productos</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div class="container">
+        <h2 class="banner__title">Ilumina tu Mundo</h2>
+        <p class="banner__text">Descubre nuestra nueva colección de lámparas colgantes y transforma tus espacios con luz envolvente.</p>
+        <a href="pages/catalog.html?category=lamparas-colgantes" class="btn btn--secondary btn--lg">Explorar Colección</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="text-align:center;max-width:700px;">
+        <h2 class="section__title">¿Por qué Lumora?</h2>
+        <p style="color:var(--color-text-light);font-size:1.05rem;line-height:1.8;">
+          En Lumora creemos que la luz es el alma del hogar. Cada pieza en nuestra colección es cuidadosamente seleccionada para brindar calidez, estilo y personalidad a tus espacios. Trabajamos con diseñadores y artesanos que comparten nuestra pasión por crear ambientes únicos.
+        </p>
+        <a href="pages/about.html" class="btn btn--secondary" style="margin-top:32px;">Conoce más sobre nosotros</a>
       </div>
     </section>
   </main>
+
   <div id="footer-placeholder"></div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const grid = document.getElementById('featured-grid');
+      if (!grid) return;
+      const featured = (window.PRODUCTS || []).filter(p => p.featured).slice(0, 4);
+      grid.innerHTML = featured.map(p => `
+        <a href="pages/product.html?id=${p.id}" class="product-card">
+          <img src="${p.image}" alt="${p.name}" class="product-card__image" loading="lazy">
+          <div class="product-card__body">
+            <p class="product-card__category">${p.categoryLabel}</p>
+            <h3 class="product-card__name">${p.name}</h3>
+            <p class="product-card__price">$${p.price.toFixed(2)}</p>
+          </div>
+        </a>
+      `).join('');
+    })();
+  </script>
 </body>
 </html>
