@@ -324,32 +324,7 @@
 
     </div>
 
-    <!-- SCRIPT -->
-
-    <script>
-
-        const appear = document.querySelectorAll(".appear");
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px 0px -100px 0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if(entry.isIntersecting){
-                    entry.target.classList.add("active");
-                    // Opcional: observer.unobserve(entry.target); // Descomentar si solo quieres que se anime una vez
-                }
-            });
-        }, observerOptions);
-
-        appear.forEach((element) => {
-            observer.observe(element);
-        });
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
