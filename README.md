@@ -1,63 +1,169 @@
-# Lumora
+# 💎 JewelryDVLuxury
 
-**Ilumina tu espacio con elegancia** — Tienda online de iluminación y decoración, 100% frontend.
+## Descripción del Proyecto
 
-## Descripción
+JewelryDVLuxury es una tienda virtual de joyería de lujo desarrollada con tecnologías web modernas. La plataforma permite a los usuarios explorar un catálogo exclusivo de productos, visualizar detalles de cada artículo, gestionar un carrito de compras y contactar con la empresa para obtener información adicional.
 
-Lumora es una tienda virtual especializada en lámparas y accesorios de iluminación. Este proyecto demuestra la construcción de una aplicación web completa utilizando únicamente tecnologías frontend: HTML5, CSS3 y JavaScript vanilla, sin dependencias de frameworks ni backend.
+El proyecto fue desarrollado como una solución de comercio electrónico enfocada en la elegancia, la experiencia de usuario y la accesibilidad desde diferentes dispositivos.
+
+---
+
+## Objetivos
+
+### Objetivo General
+
+Desarrollar una plataforma web para la comercialización de joyas de lujo que ofrezca una experiencia de navegación intuitiva y atractiva.
+
+### Objetivos Específicos
+
+* Mostrar un catálogo organizado de productos.
+* Permitir la visualización detallada de cada joya.
+* Implementar un carrito de compras funcional.
+* Facilitar el contacto entre clientes y la empresa.
+* Garantizar una experiencia responsive para dispositivos móviles y de escritorio.
+
+---
+
+## Características Principales
+
+* Catálogo de productos.
+* Visualización de detalles de productos.
+* Carrito de compras dinámico.
+* Diseño responsive.
+* Navegación intuitiva.
+* Interfaz moderna y elegante.
+* Gestión de productos mediante JavaScript.
+
+---
+
+## Tecnologías Utilizadas
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript (ES6)
+
+### Herramientas de Desarrollo
+
+* Visual Studio Code
+* Git
+* GitHub
+
+---
+
+## Estructura del Proyecto
+
+```text
+JewelryDVLuxury/
+│
+├── index.html
+├── README.md
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   ├── app.js
+│   ├── cart.js
+│   └── products.js
+│
+├── pages/
+│   ├── catalog.html
+│   ├── product.html
+│   ├── cart.html
+│   └── contact.html
+│
+└── assets/
+    ├── images/
+    └── icons/
+```
+
+## Instalación
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/LillianaU/ejemplo.git
+```
+
+2. Acceder al directorio:
+
+```bash
+cd ejemplo-store
+```
+
+3. Abrir el archivo principal:
+
+```bash
+index.html
+```
+
+o ejecutar mediante Live Server en Visual Studio Code.
+
+---
 
 ## Funcionalidades
 
--   Landing page con productos destacados y banner promocional
--   Catálogo completo con 14 productos en 4 categorías
--   Filtros por categoría y búsqueda en tiempo real
--   Página de detalle con galería de imágenes y selector de cantidad
--   Carrito de compras persistente con localStorage
--   Formulario de contacto con validación en JavaScript
--   Diseño responsive (mobile, tablet, desktop)
--   Navegación entre todas las páginas con header y footer compartidos
+### Catálogo
 
-## Estructura del proyecto
+Permite visualizar todos los productos disponibles organizados de manera clara y atractiva.
 
-```
-lumora/
-├── index.html              # Página de inicio / Landing
-├── pages/
-│   ├── catalog.html         # Catálogo de productos
-│   ├── product.html         # Detalle de producto
-│   ├── cart.html            # Carrito de compras
-│   ├── about.html           # Sobre Lumora
-│   └── contact.html         # Contacto
-├── css/
-│   └── style.css            # Estilos globales
-├── js/
-│   ├── data.js              # Datos de productos (14 artículos)
-│   ├── main.js              # Header, footer y utilidades del carrito
-│   ├── catalog.js           # Filtros y búsqueda
-│   ├── product.js           # Galería y agregar al carrito
-│   ├── cart.js              # Gestión del carrito
-│   └── contact.js           # Validación de formulario
-├── img/                     # Imágenes (placeholder)
-├── .gitignore
-└── README.md
-```
+### Detalle de Producto
 
-## Tecnologías
+Muestra información detallada sobre cada joya incluyendo descripción, precio e imágenes.
 
--   **HTML5** — Estructura semántica y meta tags
--   **CSS3** — Custom properties, Flexbox, Grid, animaciones, media queries
--   **JavaScript (Vanilla)** — Manipulación del DOM, localStorage, eventos
--   **Google Fonts** — Playfair Display + Inter
--   **Picsum.photos** — Imágenes de placeholder
+### Carrito de Compras
 
-## Cómo ejecutar
+Permite agregar, eliminar y gestionar productos seleccionados por el usuario.
 
-Abre el proyecto con **Live Server** desde VS Code (clic derecho en `index.html` > Open with Live Server) o simplemente abre `index.html` directo en tu navegador.
+### Contacto
 
-No requiere instalación de dependencias ni configuración adicional.
+Facilita la comunicación entre los clientes y la empresa.
 
-## Diseño
+---
 
--   **Paleta de colores:** Dorado oscuro (#B8860B), crema cálido (#FDF6EC), espresso (#2C1810), terracota (#C8674B)
--   **Tipografía:** Playfair Display para títulos, Inter para texto corporal
--   **Responsive:** 3 breakpoints (900px, 600px, 400px) para tablet, mobile y mobile pequeño
+## Diseño Responsive
+
+La aplicación está optimizada para:
+
+* Computadores de escritorio.
+* Tablets.
+* Dispositivos móviles.
+
+---
+
+## Control de Versiones
+
+El proyecto utiliza Git para el control de versiones y GitHub para la gestión colaborativa del código fuente.
+
+### Ramas del Proyecto
+
+* main
+* master
+* catalogo
+* david
+* productos
+* recreo
+* store
+* feature-ejemplo-rama1
+* feature/ui-redesign-premium
+
+---
+
+## Futuras Mejoras
+
+* Integración con bases de datos.
+* Sistema de autenticación de usuarios.
+* Pasarela de pagos.
+* Panel administrativo.
+* Gestión avanzada de inventario.
+* Sistema de pedidos y facturación.
+
+---
+
+## Autor
+
+David Vélez
+
+Proyecto académico y de aprendizaje enfocado en el desarrollo de aplicaciones web para comercio electrónico.
