@@ -342,6 +342,15 @@ footer ul li a:hover{
     color:#4dd9ff;
 }
 
+.copyright{
+    width:100%;
+    text-align:center;
+    margin-top:20px;
+    color:#8899bb;
+    font-size:14px;
+    letter-spacing:2px;
+}
+
 /* ANIMACION */
 
 @keyframes float{
