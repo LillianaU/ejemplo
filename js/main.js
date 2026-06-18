@@ -1,6 +1,6 @@
 const SITE = {
-  name: 'Lumora',
-  tagline: 'Ilumina tu espacio con elegancia'
+  name: 'JewelryDVLuxury',
+  tagline: 'Joyería exclusiva para tus momentos más memorables'
 };
 
 function getPrefix() {
@@ -66,7 +66,7 @@ function renderFooter() {
         <div class="footer__inner">
           <div class="footer__brand">
             <h3>${SITE.name}</h3>
-            <p>${SITE.tagline}. Descubre nuestra colección cuidadosamente seleccionada de iluminación y decoración para transformar tu hogar.</p>
+            <p>${SITE.tagline}. Descubre nuestra colección cuidadosamente seleccionada de joyas finas, piezas exclusivas y servicio concierge personalizado.</p>
           </div>
           <div class="footer__links">
             <h4>Enlaces</h4>
@@ -80,7 +80,7 @@ function renderFooter() {
           </div>
           <div class="footer__contact">
             <h4>Contacto</h4>
-            <p>hola@lumora.mx</p>
+            <p>hola@jewelrydvluxury.com</p>
             <p>+52 55 1234 5678</p>
             <p>CDMX, México</p>
           </div>
@@ -102,14 +102,14 @@ function renderFooter() {
 /* Cart Utilities */
 function getCart() {
   try {
-    return JSON.parse(localStorage.getItem('lumora_cart')) || [];
+    return JSON.parse(localStorage.getItem('jewelrydvluxury_cart')) || [];
   } catch {
     return [];
   }
 }
 
 function saveCart(cart) {
-  localStorage.setItem('lumora_cart', JSON.stringify(cart));
+  localStorage.setItem('jewelrydvluxury_cart', JSON.stringify(cart));
 }
 
 function addToCart(product, quantity = 1) {
@@ -185,8 +185,57 @@ function formatPrice(price) {
   return `$${Number(price).toFixed(2)}`;
 }
 
+function initCarousel() {
+  const track = document.getElementById('carousel-track');
+  const indicators = document.getElementById('carousel-indicators');
+  if (!track || !indicators) return;
+
+  const slides = Array.from(track.querySelectorAll('.carousel__slide'));
+  let activeIndex = 0;
+  let intervalId;
+
+  function updateCarousel(index) {
+    activeIndex = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${activeIndex * 100}%)`;
+
+    slides.forEach((slide, idx) => slide.classList.toggle('active', idx === activeIndex));
+
+    indicators.innerHTML = slides.map((_, idx) => `
+      <button class="carousel__indicator ${idx === activeIndex ? 'active' : ''}" data-index="${idx}" aria-label="Ir a la diapositiva ${idx + 1}"></button>
+    `).join('');
+
+    indicators.querySelectorAll('.carousel__indicator').forEach(button => {
+      button.addEventListener('click', () => {
+        updateCarousel(Number(button.dataset.index));
+        resetAutoRotate();
+      });
+    });
+  }
+
+  function resetAutoRotate() {
+    clearInterval(intervalId);
+    intervalId = setInterval(() => {
+      updateCarousel(activeIndex + 1);
+    }, 7000);
+  }
+
+  document.getElementById('carousel-prev')?.addEventListener('click', () => {
+    updateCarousel(activeIndex - 1);
+    resetAutoRotate();
+  });
+
+  document.getElementById('carousel-next')?.addEventListener('click', () => {
+    updateCarousel(activeIndex + 1);
+    resetAutoRotate();
+  });
+
+  updateCarousel(0);
+  resetAutoRotate();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderHeader();
   renderFooter();
   updateCartBadge();
+  initCarousel();
 });

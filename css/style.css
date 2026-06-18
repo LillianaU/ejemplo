@@ -1,23 +1,23 @@
 /* ============================================
-   Lumora - Estilos Globales
+   JewelryDVLuxury - Estilos Globales
    ============================================ */
 :root {
-  --color-primary: #B8860B;
-  --color-primary-hover: #D4A843;
-  --color-primary-light: #F5E6CC;
-  --color-primary-dark: #8B6508;
-  --color-secondary: #2C1810;
-  --color-accent: #C8674B;
-  --color-accent-hover: #B85A3E;
-  --color-bg: #FFFBF5;
-  --color-bg-alt: #FDF6EC;
-  --color-bg-dark: #F5E6CC;
-  --color-text: #2D1B0E;
-  --color-text-light: #6B5344;
-  --color-text-lighter: #9C8574;
+  --color-primary: #B4975A;
+  --color-primary-hover: #D3B674;
+  --color-primary-light: #F2E7D0;
+  --color-primary-dark: #7C5D2A;
+  --color-secondary: #161210;
+  --color-accent: #8A6950;
+  --color-accent-hover: #A38165;
+  --color-bg: #F7F0E8;
+  --color-bg-alt: #FBF6F1;
+  --color-bg-dark: #E7D7C7;
+  --color-text: #17120F;
+  --color-text-light: #7D6859;
+  --color-text-lighter: #B39E8F;
   --color-white: #FFFFFF;
-  --color-border: #E8D5C4;
-  --color-border-light: #F0E4D8;
+  --color-border: #E2D3C5;
+  --color-border-light: #EFE2D4;
   --color-success: #5B8C5A;
   --color-error: #C8674B;
   --color-star: #D4A843;
@@ -961,7 +961,10 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, #1a0f0a 0%, #2C1810 40%, #3d2317 100%);
+  background: linear-gradient(135deg, rgba(23, 17, 14, 0.95) 0%, rgba(23, 17, 14, 0.72) 45%, rgba(23, 17, 14, 0.95) 100%), url('https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--color-white);
   position: relative;
   overflow: hidden;
@@ -1019,6 +1022,149 @@ ul { list-style: none; }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.hero__eyebrow,
+.carousel__eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.8rem;
+  color: var(--color-primary-light);
+  margin-bottom: 16px;
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+  margin: 40px auto;
+  padding: 0;
+}
+
+.carousel__track {
+  display: flex;
+  transition: transform 0.8s ease;
+  width: 300%;
+}
+
+.carousel__slide {
+  min-width: 100%;
+  padding: 120px 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  position: relative;
+}
+
+.carousel__slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(20, 14, 12, 0.1), rgba(20, 14, 12, 0.85));
+}
+
+.carousel__text {
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+}
+
+.carousel__text h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+
+.carousel__text p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.carousel__nav {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  gap: 12px;
+  z-index: 2;
+}
+
+.carousel__control {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-white);
+  font-size: 1.6rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.carousel__control:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.carousel__indicators {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.carousel__indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.carousel__indicator.active {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+  .carousel__text h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel__slide {
+    padding: 80px 16px;
+  }
+  .carousel__nav {
+    bottom: 16px;
+    right: 16px;
+  }
+  .carousel__indicators {
+    bottom: 16px;
+    left: 16px;
   }
 }
 
