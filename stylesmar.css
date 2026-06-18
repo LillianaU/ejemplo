@@ -1585,3 +1585,135 @@ footer > ul li a:hover {
         font-size: 28px;
     }
 }
+
+/* ============================================
+   RESPONSIVE — SMALL MOBILE
+   ============================================ */
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 34px;
+    }
+
+    .hero-text .hero-subtitle {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+    .hero-image img {
+        width: 220px;
+    }
+
+    .cards {
+        gap: 12px;
+    }
+
+    .card {
+        width: 140px;
+        height: 200px;
+    }
+
+    .card h2 {
+        font-size: 12px;
+        bottom: 12px;
+        left: 12px;
+    }
+
+    .section h1 {
+        font-size: 26px;
+    }
+
+    .section-subtitle {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+
+    .feature {
+        padding: 28px 20px;
+    }
+
+    .stat-number {
+        font-size: 30px;
+    }
+
+    .video-box h1 {
+        font-size: 22px;
+        letter-spacing: 3px;
+    }
+
+    .interview-text h1 {
+        font-size: 28px;
+    }
+
+    .filter-btn {
+        padding: 10px 18px;
+        font-size: 11px;
+    }
+
+    .catalog-info h3 {
+        font-size: 18px;
+    }
+
+    .catalog-info .price {
+        font-size: 26px;
+    }
+}
+
+/* ============================================
+   TOUCH & ACCESSIBILITY ENHANCEMENTS
+   ============================================ */
+
+@media (hover: none) {
+    button:hover,
+    .card:hover,
+    .catalog-card:hover,
+    .feature:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    button:active {
+        transform: scale(0.97);
+        opacity: 0.9;
+    }
+
+    .card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Focus-visible outlines for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 3px;
+}
+
+/* Custom text selection */
+::selection {
+    background: rgba(0, 212, 255, 0.3);
+    color: var(--text-primary);
+}
+
+/* Smooth reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .appear {
+        opacity: 1;
+        transform: none;
+    }
+
+    .hero-image img {
+        animation: none;
+    }
+}
