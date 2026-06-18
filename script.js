@@ -1,3 +1,23 @@
+const appear = document.querySelectorAll(".appear");
+
+const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -100px 0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+        }
+    });
+}, observerOptions);
+
+appear.forEach((element) => {
+    observer.observe(element);
+});
+
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
 const filterBtns = document.querySelectorAll(".filter-btn");

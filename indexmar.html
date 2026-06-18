@@ -214,6 +214,95 @@
 
         </main>
 
+        <section class="section">
+
+    <h1 class="appear">What Our Divers Say</h1>
+
+    <!-- VIDEO -->
+
+<section class="video">
+
+    <div class="video-box appear">
+
+        <h1>DOWN IN THE DEEP</h1>
+
+        <button>
+            WATCH VIDEO
+        </button>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="section">
+
+    <h1 class="appear">
+        What Our Divers Say
+    </h1>
+
+    <div class="features">
+
+        <div class="feature testimonial appear">
+
+            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
+
+            <h3>Sarah Johnson</h3>
+
+            <p>
+                "One of the best experiences of my life.
+                The instructors were professional and the
+                underwater views were breathtaking."
+            </p>
+
+            <span>★★★★★</span>
+
+        </div>
+
+        <div class="feature testimonial appear">
+
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Brown">
+
+            <h3>Michael Brown</h3>
+
+            <p>
+                "Swimming with dolphins was unforgettable.
+                Everything was perfectly organized from start
+                to finish."
+            </p>
+
+            <span>★★★★★</span>
+
+        </div>
+
+        <div class="feature testimonial appear">
+
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emily Carter">
+
+            <h3>Emily Carter</h3>
+
+            <p>
+                "The coral reef dive exceeded all my expectations.
+                I can't wait to come back next year."
+            </p>
+
+            <span>★★★★★</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer id="help">
+
+</section>
+
         <!-- FOOTER -->
 
         <footer id="help">
@@ -235,32 +324,7 @@
 
     </div>
 
-    <!-- SCRIPT -->
-
-    <script>
-
-        const appear = document.querySelectorAll(".appear");
-
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px 0px -100px 0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if(entry.isIntersecting){
-                    entry.target.classList.add("active");
-                    // Opcional: observer.unobserve(entry.target); // Descomentar si solo quieres que se anime una vez
-                }
-            });
-        }, observerOptions);
-
-        appear.forEach((element) => {
-            observer.observe(element);
-        });
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
