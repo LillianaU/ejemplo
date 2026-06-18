@@ -9,6 +9,7 @@ body{
     background:#090b2d;
     color:white;
     overflow-x:hidden;
+    scroll-behavior:smooth;
 }
 
 /* CONTENEDOR PRINCIPAL */
