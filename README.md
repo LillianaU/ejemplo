@@ -11,10 +11,12 @@ Este proyecto consiste en una página web estática diseñada para representar l
 Incluye distintas secciones informativas como:
 
 - Inicio
-- Catálogo de productos
+- Catálogo de productos (con búsqueda y filtros)
 - Productos especiales
 - Pedidos personalizados
 - Información de contacto
+
+El catálogo incluye una barra de búsqueda, filtros por categoría y una cuadrícula de productos con precios.
 
 El objetivo principal es practicar la estructura semántica de HTML y la organización de contenido en una página web.
 
@@ -32,6 +34,8 @@ El objetivo principal es practicar la estructura semántica de HTML y la organiz
 ```bash
 Pasteleria-Dulce-Encanto/
 │
-├── index.html
-├── styles.css
+├── indexmar.html
+├── catalogo.html
+├── stylesmar.css
+├── script.js
 └── README.md
