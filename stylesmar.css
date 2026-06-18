@@ -43,6 +43,10 @@ nav{
     font-size:28px;
     font-weight:bold;
     letter-spacing:4px;
+    background:linear-gradient(to right,#4dd9ff,#1a3a8a);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
 }
 
 nav ul{
