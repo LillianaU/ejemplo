@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Encanto</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3CradialGradient id='g' cx='0.4' cy='0.35' r='0.65'%3E%3Cstop offset='0%25' stop-color='%238D6E63'/%3E%3Cstop offset='100%25' stop-color='%235D4037'/%3E%3C/radialGradient%3E%3Cfilter id='s'%3E%3CfeDropShadow dx='2' dy='3' stdDeviation='2' flood-opacity='0.3'/%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='38' fill='url(%23g)' filter='url(%23s)'/%3E%3Ccircle cx='50' cy='50' r='16' fill='%23FFF0F5'/%3E%3Ccircle cx='50' cy='50' r='13' fill='%235D4037' opacity='0.2'/%3E%3Cpath d='M12,48 A38,38 0 0,1 88,48 Q70,36 50,34 Q30,36 12,48 Z' fill='%23FFB6C1'/%3E%3Cpath d='M20,50 Q22,60 26,56' stroke='%23FFB6C1' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M68,50 Q72,62 76,54' stroke='%23E8A0BF' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Crect x='35' y='42' width='6' height='2' rx='1' fill='%23fff' transform='rotate(-20,38,43)'/%3E%3Crect x='54' y='40' width='6' height='2' rx='1' fill='%23fff' transform='rotate(15,57,41)'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- LOADING SCREEN -->
+
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-icon">🎂</div>
+            <h1 class="loader-title">Pastelería Dulce Encanto</h1>
+            <p class="loader-sub">Preparando tus dulces...</p>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="site-wrapper">
+
+        <!-- NAVBAR -->
+
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">Dulce Encanto</a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#catalogo" class="nav-link">Catálogo</a></li>
+                    <li><a href="#especiales" class="nav-link">Especiales</a></li>
+                    <li><a href="#pedidos" class="nav-link">Pedidos</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+
+        <section id="inicio" class="hero parallax-section" data-speed="0.5">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926?w=1920&q=80');"></div>
+            <div class="floating-scene" id="floating-hero" aria-hidden="true"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Desde 2020 endulzando tus momentos</p>
+                <h1 class="hero-title">Bienvenidos a<br><span class="hero-brand">Dulce Encanto</span></h1>
+                <p class="hero-desc">Cada bocado está hecho con amor, utilizando los mejores ingredientes para crear experiencias inolvidables.</p>
+                <a href="#catalogo" class="btn">Descubre Nuestros Dulces</a>
+            </div>
+        </section>
+
+        <!-- CATALOGO -->
+
+        <section id="catalogo" class="section">
+            <div class="section-header appear">
+                <p class="section-tag">Nuestro Catálogo</p>
+                <h2 class="section-title">Productos Artesanales</h2>
+                <p class="section-desc">Elaborados diariamente con recetas tradicionales y un toque único.</p>
+            </div>
+            <div class="catalog-grid">
+                <div class="catalog-card appear" data-product="chocolate">
+                    <div class="catalog-img">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=400&fit=crop" alt="Pastel de Chocolate">
+                    </div>
+                    <div class="catalog-body">
+                        <h3>Pastel de Chocolate</h3>
+                        <p>Delicioso pastel con capas de chocolate belga y relleno de ganache.</p>
+                        <p class="catalog-price">$78.000</p>
+                    </div>
+                </div>
+                <div class="catalog-card appear" data-product="cupcakes">
+                    <div class="catalog-img">
+                        <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=500&h=400&fit=crop" alt="Cupcakes">
+                    </div>
+                    <div class="catalog-body">
+                        <h3>Cupcakes Decorados</h3>
+                        <p>Esponjosos cupcakes con frosting de vainilla y decoración artesanal.</p>
+                        <p class="catalog-price">$9.500 c/u</p>
+                    </div>
+                </div>
+                <div class="catalog-card appear" data-product="macarons">
+                    <div class="catalog-img">
+                        <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=500&h=400&fit=crop" alt="Macarons">
+                    </div>
+                    <div class="catalog-body">
+                        <h3>Macarons Franceses</h3>
+                        <p>Delicados macarons en variedad de colores y sabores.</p>
+                        <p class="catalog-price">$5.500 c/u</p>
+                    </div>
+                </div>
+                <div class="catalog-card appear" data-product="galletas">
+                    <div class="catalog-img">
+                        <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=500&h=400&fit=crop" alt="Galletas">
+                    </div>
+                    <div class="catalog-body">
+                        <h3>Galletas Artesanales</h3>
+                        <p>Galletas recién horneadas con chispas de chocolate y avellanas.</p>
+                        <p class="catalog-price">$3.500 c/u</p>
+                    </div>
+                </div>
+                <div class="catalog-card appear" data-product="cheesecake">
+                    <div class="catalog-img">
+                        <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500&h=400&fit=crop" alt="Cheesecake">
+                    </div>
+                    <div class="catalog-body">
+                        <h3>Cheesecake</h3>
+                        <p>Suave cheesecake estilo New York con cobertura de frutos rojos.</p>
+                        <p class="catalog-price">$72.000</p>
+                    </div>
+                </div>
+                <div class="catalog-card appear" data-product="donas">
+                    <div class="catalog-img">
+                        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500&h=400&fit=crop" alt="Donas Glaseadas">
+                    </div>
+                    <div class="catalog-body">
+                        <h3>Donas Glaseadas</h3>
+                        <p>Esponjosas donas con glaseado de colores y chispas variadas.</p>
+                        <p class="catalog-price">$5.500 c/u</p>
+                    </div>
+                </div>
+                <div class="catalog-card appear" data-product="tresleches">
+                    <div class="catalog-img">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500&h=400&fit=crop" alt="Pastel Tres Leches">
+                    </div>
+                    <div class="catalog-body">
+                        <h3>Pastel Tres Leches</h3>
+                        <p>Esponjoso bañado en tres leches con crema batida y canela.</p>
+                        <p class="catalog-price">$62.000</p>
+                    </div>
+                </div>
+                <div class="catalog-card appear" data-product="croissants">
+                    <div class="catalog-img">
+                        <img src="https://images.unsplash.com/photo-1623334044303-241021148842?w=500&h=400&fit=crop" alt="Croissants">
+                    </div>
+                    <div class="catalog-body">
+                        <h3>Croissants</h3>
+                        <p>Hojaldrados y dorados, horneados diariamente con mantequilla francesa.</p>
+                        <p class="catalog-price">$4.500 c/u</p>
+                    </div>
+                </div>
+                <div class="catalog-card appear" data-product="paylimon">
+                    <div class="catalog-img">
+                        <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=500&h=400&fit=crop" alt="Pay de Limón">
+                    </div>
+                    <div class="catalog-body">
+                        <h3>Pay de Limón</h3>
+                        <p>Base crujiente con relleno cítrico y merengue dorado artesanal.</p>
+                        <p class="catalog-price">$55.000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESPECIALES -->
+
+        <section id="especiales" class="section specials parallax-section" data-speed="0.3">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=1920&q=80');"></div>
+            <div class="floating-scene" id="floating-especiales" aria-hidden="true"></div>
+            <div class="section-header appear">
+                <p class="section-tag">Productos Especiales</p>
+                <h2 class="section-title">Ediciones Exclusivas</h2>
+                <p class="section-desc">Creaciones únicas para momentos especiales.</p>
+            </div>
+            <div class="specials-content">
+                <div class="specials-text appear">
+                    <h3>Pastel de Bodas</h3>
+                    <p>Nuestro pastel de bodas es una obra maestra. Varios niveles, decoración floral comestible y rellenos personalizados. Ideal para el día más importante de tu vida.</p>
+                    <ul class="specials-list">
+                        <li><i class="fas fa-wand-magic-sparkles"></i> Diseño personalizado</li>
+                        <li><i class="fas fa-leaf"></i> Flores comestibles</li>
+                        <li><i class="fas fa-layer-group"></i> Hasta 5 niveles</li>
+                        <li><i class="fas fa-heart"></i> Sabor a elección</li>
+                    </ul>
+                    <a href="#pedidos" class="btn btn-small">Solicitar Cotización</a>
+                </div>
+                <div class="specials-img appear">
+                    <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=600&h=500&fit=crop" alt="Pastel de Bodas">
+                </div>
+            </div>
+        </section>
+
+        <!-- PEDIDOS -->
+
+        <section id="pedidos" class="section">
+            <div class="section-header appear">
+                <p class="section-tag">Pedidos Personalizados</p>
+                <h2 class="section-title">Crea tu Dulce Ideal</h2>
+                <p class="section-desc">Cuéntanos lo que necesitas y lo haremos realidad.</p>
+            </div>
+            <div class="form-wrapper appear">
+                <form id="order-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                        <span class="form-error" id="name-error">Por favor ingresa tu nombre</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                        <span class="form-error" id="email-error">Ingresa un correo válido</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+57 300 456 7890" required>
+                        <span class="form-error" id="phone-error">Ingresa un teléfono válido</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-type">Tipo de Producto</label>
+                        <select id="product-type" name="product-type" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="pastel">Pastel de Chocolate</option>
+                            <option value="cupcakes">Cupcakes (docena)</option>
+                            <option value="macarons">Macarons (docena)</option>
+                            <option value="galletas">Galletas (docena)</option>
+                            <option value="cheesecake">Cheesecake</option>
+                            <option value="donas">Donas Glaseadas (docena)</option>
+                            <option value="tresleches">Pastel Tres Leches</option>
+                            <option value="croissants">Croissants (docena)</option>
+                            <option value="paylimon">Pay de Limón</option>
+                            <option value="bodas">Pastel de Bodas</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                        <span class="form-error" id="product-type-error">Selecciona un producto</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Descripción de tu Pedido</label>
+                        <textarea id="description" name="description" rows="5" placeholder="Cuéntanos cómo quieres tu pastel: sabores, decoración, tamaño, colores..." required></textarea>
+                        <span class="form-error" id="description-error">Describe tu pedido</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Fecha de Entrega</label>
+                        <input type="date" id="date" name="date" required>
+                        <span class="form-error" id="date-error">Selecciona una fecha</span>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Enviar Pedido</button>
+                </form>
+                <div id="form-success" class="form-success hidden">
+                    <span class="form-success-icon"><i class="fas fa-circle-check"></i></span>
+                    <h3>¡Pedido Enviado!</h3>
+                    <p>Gracias por tu pedido. Te contactaremos pronto para confirmar los detalles.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIOS -->
+
+        <section class="section testimonials parallax-section" data-speed="0.4">
+            <div class="parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=1920&q=80');"></div>
+            <div class="section-header appear">
+                <p class="section-tag">Testimonios</p>
+                <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card appear">
+                    <p class="testimonial-text">"El pastel de bodas superó todas mis expectativas. Hermoso y delicioso. ¡100% recomendados!"</p>
+                    <div class="testimonial-author">
+                        <p class="testimonial-name">María G.</p>
+                        <p class="testimonial-role">Boda - Abril 2025</p>
+                    </div>
+                </div>
+                <div class="testimonial-card appear">
+                    <p class="testimonial-text">"Pido los cupcakes para cada cumpleaños de mis hijos. Siempre quedan perfectos y todos los aman."</p>
+                    <div class="testimonial-author">
+                        <p class="testimonial-name">Laura R.</p>
+                        <p class="testimonial-role">Cliente Frecuente</p>
+                    </div>
+                </div>
+                <div class="testimonial-card appear">
+                    <p class="testimonial-text">"Los macarons son los mejores que he probado fuera de Francia. La textura y el sabor son increíbles."</p>
+                    <div class="testimonial-author">
+                        <p class="testimonial-name">Carlos M.</p>
+                        <p class="testimonial-role">Catador de Postres</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+
+        <section id="contacto" class="section contact">
+            <div class="section-header appear">
+                <p class="section-tag">Contacto</p>
+                <h2 class="section-title">Estamos para Ti</h2>
+                <p class="section-desc">Visítanos o contáctanos para cualquier consulta.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info appear">
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-location-dot"></i></span>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Cra 45 #23-12, El Poblado, Medellín, Colombia</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+57 300 456 7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hola@dulceencanto.com.co</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-clock"></i></span>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Lun - Sáb: 8:00am - 8:00pm<br>Dom: 9:00am - 2:00pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map appear">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5213!2d-75.5765!3d6.2098!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80fad05%3A0x42137cfcc7b53b56!2sEl%20Poblado%2C%20Medell%C3%ADn!5e0!3m2!1ses!2sco!4v1" width="100%" height="400" style="border:0; border-radius:20px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+            <div class="floating-scene" id="floating-footer" aria-hidden="true"></div>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Dulce Encanto</h3>
+                    <p>Endulzando tus momentos desde 2020.<br>Hecho con amor, horneado con pasión.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#especiales">Especiales</a></li>
+                        <li><a href="#pedidos">Pedidos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook" class="social-link facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="#" aria-label="WhatsApp" class="social-link whatsapp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="social-link tiktok">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pastelería Dulce Encanto. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- PRODUCT MODAL -->
+
+    <div id="product-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-inner">
+                <div class="modal-gallery">
+                    <div class="modal-main-img" id="modal-main-img"></div>
+                    <div class="modal-thumbs" id="modal-thumbs"></div>
+                </div>
+                <div class="modal-body">
+                    <h2 id="modal-title"></h2>
+                    <p class="modal-desc" id="modal-desc"></p>
+                    <p class="modal-long-desc" id="modal-long-desc"></p>
+                    <div class="modal-options">
+                        <div class="option-group">
+                            <label>Sabor / Variación</label>
+                            <select id="modal-variation"></select>
+                        </div>
+                        <div class="option-group">
+                            <label>Tamaño / Cantidad</label>
+                            <select id="modal-size"></select>
+                        </div>
+                        <div class="option-group">
+                            <label>Extras</label>
+                            <select id="modal-extras">
+                                <option value="0">Ninguno</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-total">
+                        <span>Total:</span>
+                        <span id="modal-price">$0</span>
+                    </div>
+                    <button class="btn" id="modal-order-btn">
+                        <i class="fas fa-shopping-cart"></i> Agregar al Pedido
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

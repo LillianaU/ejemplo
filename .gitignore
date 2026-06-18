@@ -1,0 +1,19 @@
+# System
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Project
+*.pptx
+
+# Backups
+_backup/
+_v1_original/
+_v2_parallax/
+_v3_responsive/
+_v4_footerfix/
