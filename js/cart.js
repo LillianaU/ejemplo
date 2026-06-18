@@ -95,7 +95,7 @@
     const checkoutBtn = document.getElementById('checkout-btn');
     if (checkoutBtn) {
       checkoutBtn.addEventListener('click', () => {
-        localStorage.removeItem('lumora_cart');
+        localStorage.removeItem('jewelrydvluxury_cart');
         modal.classList.add('visible');
         updateCartBadge();
       });
