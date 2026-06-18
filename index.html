@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JewelryDVLuxury - Joyería exclusiva de alta gama. Descubre anillos, collares, aretes y relojes de lujo.">
+  <title>JewelryDVLuxury - Joyería exclusiva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <span class="hero__eyebrow">Joyería exclusiva</span>
+        <h1 class="hero__title">JewelryDVLuxury</h1>
+        <p class="hero__subtitle">Colección de alta joyería para momentos inolvidables, entrega privada y piezas de edición limitada.</p>
+        <div class="hero__actions">
+          <a href="pages/catalog.html" class="btn btn--primary btn--lg">Explorar Colección</a>
+          <a href="pages/contact.html" class="btn btn--secondary btn--lg">Solicitar Asesoría VIP</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="carousel container" aria-label="Carrusel de joyas exclusivas">
+      <div class="carousel__track" id="carousel-track">
+        <article class="carousel__slide active" style="background-image: linear-gradient(180deg, rgba(20,14,12,0.45), rgba(20,14,12,0.8)), url('https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=1200&q=80');">
+          <div class="carousel__text">
+            <span class="carousel__eyebrow">Edición limitada</span>
+            <h2>Anillos de compromiso con diamantes certificados</h2>
+            <p>Diseños atemporales en oro blanco, rosa o amarillo, creados para brillar en cada historia única.</p>
+          </div>
+        </article>
+        <article class="carousel__slide" style="background-image: linear-gradient(180deg, rgba(20,14,12,0.45), rgba(20,14,12,0.8)), url('https://images.unsplash.com/photo-1511381939415-dd5c8dd0b7a4?auto=format&fit=crop&w=1200&q=80');">
+          <div class="carousel__text">
+            <span class="carousel__eyebrow">Colección Premium</span>
+            <h2>Pendientes y collares de exquisita artesanía</h2>
+            <p>Piezas esculpidas a mano que combinan piedra preciosa, seda y metal noble para un brillo soberbio.</p>
+          </div>
+        </article>
+        <article class="carousel__slide" style="background-image: linear-gradient(180deg, rgba(20,14,12,0.45), rgba(20,14,12,0.8)), url('https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?auto=format&fit=crop&w=1200&q=80');">
+          <div class="carousel__text">
+            <span class="carousel__eyebrow">Experiencia VIP</span>
+            <h2>Consultoría privada de estilo y selección</h2>
+            <p>Nuestro equipo de expertos acompaña tu compra desde la selección hasta el servicio postventa exclusivo.</p>
+          </div>
+        </article>
+      </div>
+      <div class="carousel__nav">
+        <button class="carousel__control" id="carousel-prev" aria-label="Anterior">‹</button>
+        <button class="carousel__control" id="carousel-next" aria-label="Siguiente">›</button>
+      </div>
+      <div class="carousel__indicators" id="carousel-indicators"></div>
+    </section>
+
+    <section class="features-strip container">
+      <div class="features-strip__item">
+        <div class="features-strip__icon">💎</div>
+        <h4>Joyas únicas</h4>
+        <p>Diseñadas para celebrar cada momento con elegancia.</p>
+      </div>
+      <div class="features-strip__item">
+        <div class="features-strip__icon">🛍️</div>
+        <h4>Entrega privada</h4>
+        <p>Embalajes de lujo y envío asegurado con seguimiento personalizado.</p>
+      </div>
+      <div class="features-strip__item">
+        <div class="features-strip__icon">🤝</div>
+        <h4>Atención concierge</h4>
+        <p>Asesoría exclusiva para eventos, regalos y compras de colección.</p>
+      </div>
+      <div class="features-strip__item">
+        <div class="features-strip__icon">✔️</div>
+        <h4>Garantía premium</h4>
+        <p>Certificados de autenticidad y servicio postventa dedicado.</p>
+      </div>
+    </section>
+
+    <section class="featured">
+      <div class="container">
+        <h2 class="section__title">Colección Destacada</h2>
+        <p class="section__subtitle">Descubre nuestras piezas más exclusivas, seleccionadas para un estilo impecable.</p>
+        <div class="featured__grid" id="featured-grid"></div>
+        <div class="featured__cta">
+          <a href="pages/catalog.html" class="btn btn--secondary btn--lg">Ver Toda la Colección</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div class="container">
+        <h2 class="banner__title">Joyas creadas para durar generaciones</h2>
+        <p class="banner__text">En JewelryDVLuxury combinamos materiales nobles con acabados artesanales para ofrecer piezas exclusivas que perduran en el tiempo.</p>
+        <a href="pages/catalog.html" class="btn btn--secondary btn--lg">Explorar ahora</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="text-align:center;max-width:700px;">
+        <h2 class="section__title">¿Por qué elegir JewelryDVLuxury?</h2>
+        <p style="color:var(--color-text-light);font-size:1.05rem;line-height:1.8;">
+          JewelryDVLuxury es una boutique de alta joyería dedicada a crear piezas exclusivas para quienes buscan sofisticación, calidad y un servicio excepcional. Nuestro equipo trabaja de la mano con artesanos expertos para diseñar joyas únicas, con atención al detalle y un enfoque 100% personalizado.
+        </p>
+        <a href="pages/about.html" class="btn btn--secondary" style="margin-top:32px;">Conoce nuestra historia</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const grid = document.getElementById('featured-grid');
+      if (!grid) return;
+      const featured = (window.PRODUCTS || []).filter(p => p.featured).slice(0, 4);
+      grid.innerHTML = featured.map(p => `
+        <a href="pages/product.html?id=${p.id}" class="product-card">
+          <img src="${p.image}" alt="${p.name}" class="product-card__image" loading="lazy">
+          <div class="product-card__body">
+            <p class="product-card__category">${p.categoryLabel}</p>
+            <h3 class="product-card__name">${p.name}</h3>
+            <p class="product-card__price">$${p.price.toFixed(2)}</p>
+          </div>
+        </a>
+      `).join('');
+    })();
+  </script>
+</body>
+</html>
