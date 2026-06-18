@@ -8,10 +8,11 @@
 
   const categories = [
     { value: 'todas', label: 'Todas' },
-    { value: 'lamparas-mesa', label: 'Lámparas de Mesa' },
-    { value: 'lamparas-pie', label: 'Lámparas de Pie' },
-    { value: 'lamparas-colgantes', label: 'Lámparas Colgantes' },
-    { value: 'velas-aromas', label: 'Velas y Aromas' }
+    { value: 'anillos', label: 'Anillos' },
+    { value: 'aretes', label: 'Aretes' },
+    { value: 'collares', label: 'Collares' },
+    { value: 'pulseras', label: 'Brazaletes' },
+    { value: 'relojes', label: 'Relojes' }
   ];
 
   function renderFilters() {
