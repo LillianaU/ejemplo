@@ -4,12 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ocean Dive</title>
+    <title>Ocean Dive — Explore the Deep Sea</title>
+    <meta name="description" content="Discover incredible diving experiences. Explore the deep sea with guided tours, swim with dolphins, turtles, and discover vibrant coral reefs.">
+    <meta property="og:title" content="Ocean Dive — Explore the Deep Sea">
+    <meta property="og:description" content="Premium diving experiences around the world. Explore the ocean like never before.">
+    <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="stylesmar.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 </head>
 
 <body>
+
+    <!-- PRELOADER -->
+
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">OCEAN</div>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- PARTICLE BACKGROUND -->
+
+    <canvas id="particleCanvas"></canvas>
 
     <div class="container">
 
@@ -25,14 +43,25 @@
                     OCEAN
                 </div>
 
+                <div class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
                 <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="catalogo.html">PACKAGES</a></li>
-                    <li><a href="Locations.html">LOCATIONS</a></li>
-                    <li><a href="#">HELP</a></li>
+                    <li><a href="#home" class="active">HOME</a></li>
+                    <li><a href="#packages">PACKAGES</a></li>
+                    <li><a href="catalogo.html">CATALOG</a></li>
+                    <li><a href="#locations">LOCATIONS</a></li>
+                    <li><a href="#help">HELP</a></li>
                 </ul>
 
             </nav>
+
+            <!-- MOBILE OVERLAY -->
+
+            <div class="mobile-overlay"></div>
 
             <!-- HERO -->
 
@@ -40,15 +69,18 @@
 
                 <div class="hero-text appear">
 
-                    <h1>Dive Ocean</h1>
+                    <span class="hero-subtitle">Underwater Adventures</span>
+
+                    <h1>Dive Into The Ocean</h1>
 
                     <p>
                         Explore the deep sea and discover
                         incredible marine life hidden beneath
-                        the waves.
+                        the waves. Unforgettable experiences
+                        await below the surface.
                     </p>
 
-                    <button>
+                    <button id="ctaHero">
                         CREATE YOUR PACKAGE
                     </button>
 
@@ -56,7 +88,7 @@
 
                 <div class="hero-image appear">
 
-                    <img src="https://i.pinimg.com/1200x/43/7f/3a/437f3a5a247198e8c4440a839f304f4a.jpg" alt="Buceador explorando el océano">
+                    <img src="https://i.pinimg.com/1200x/43/7f/3a/437f3a5a247198e8c4440a839f304f4a.jpg" alt="Scuba diver exploring the deep ocean with sunlight rays">
 
                 </div>
 
@@ -72,7 +104,7 @@
 
             <article class="card appear">
 
-                <img src="https://i.pinimg.com/736x/2a/1e/34/2a1e3447a825eedd2b72d2a972712b51.jpg" alt="Tortuga marina nadando en el mar">
+                <img src="https://i.pinimg.com/736x/2a/1e/34/2a1e3447a825eedd2b72d2a972712b51.jpg" alt="Sea turtle swimming gracefully through crystal clear water">
 
                 <h2>TURTLES</h2>
 
@@ -80,7 +112,7 @@
 
             <article class="card appear">
 
-                <img src="https://i.pinimg.com/1200x/53/8d/59/538d592fab705a8e63eab82848c319d8.jpg" alt="Medusa flotando en el agua">
+                <img src="https://i.pinimg.com/1200x/53/8d/59/538d592fab705a8e63eab82848c319d8.jpg" alt="Bioluminescent jellyfish floating in deep blue water">
 
                 <h2>JELLYFISH</h2>
 
@@ -88,7 +120,7 @@
 
             <article class="card appear">
 
-                <img src="https://i.pinimg.com/1200x/87/49/9a/87499affbb05820a951a0f6f8604897f.jpg" alt="Delfines nadando bajo el agua">
+                <img src="https://i.pinimg.com/1200x/87/49/9a/87499affbb05820a951a0f6f8604897f.jpg" alt="Pod of dolphins swimming playfully underwater">
 
                 <h2>DOLPHINS</h2>
 
@@ -96,7 +128,7 @@
 
             <article class="card appear">
 
-                <img src="https://i.pinimg.com/1200x/d3/a7/e3/d3a7e33d2753143dc1bc230e07a75086.jpg" alt="Colorido arrecife de coral">
+                <img src="https://i.pinimg.com/1200x/d3/a7/e3/d3a7e33d2753143dc1bc230e07a75086.jpg" alt="Vibrant colorful coral reef teeming with tropical fish">
 
                 <h2>REEF</h2>
 
@@ -104,9 +136,37 @@
 
         </section>
 
+        <!-- STATS -->
+
+        <section class="stats">
+
+            <div class="stat-item appear">
+                <div class="stat-number" data-target="15" data-suffix="+">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+
+            <div class="stat-item appear">
+                <div class="stat-number" data-target="5000" data-suffix="+">0</div>
+                <div class="stat-label">Dives Completed</div>
+            </div>
+
+            <div class="stat-item appear">
+                <div class="stat-number" data-target="120" data-suffix="">0</div>
+                <div class="stat-label">Expert Instructors</div>
+            </div>
+
+            <div class="stat-item appear">
+                <div class="stat-number" data-target="30" data-suffix="+">0</div>
+                <div class="stat-label">Locations Worldwide</div>
+            </div>
+
+        </section>
+
         <!-- FEATURES -->
 
         <section id="locations" class="section">
+
+            <span class="section-subtitle appear">Why Choose Us</span>
 
             <h1 class="appear">
                 Learn to dive with us
@@ -116,47 +176,97 @@
 
                 <div class="feature appear">
 
-                    <div class="circle"></div>
+                    <div class="feature-icon">🤿</div>
 
                     <h3>ADVENTURE</h3>
 
                     <p>
                         Experience the ocean like never before
-                        with guided diving tours.
+                        with guided diving tours led by
+                        certified professionals.
                     </p>
 
-                    <button>FIND OUT MORE</button>
+                    <button class="btn-outline">FIND OUT MORE</button>
 
                 </div>
 
                 <div class="feature appear">
 
-                    <div class="circle"></div>
+                    <div class="feature-icon">🌊</div>
 
                     <h3>OPEN WATER</h3>
 
                     <p>
                         Learn professional diving skills
-                        from experienced instructors.
+                        from experienced instructors with
+                        internationally recognized certifications.
                     </p>
 
-                    <button>FIND OUT MORE</button>
+                    <button class="btn-outline">FIND OUT MORE</button>
 
                 </div>
 
                 <div class="feature appear">
 
-                    <div class="circle"></div>
+                    <div class="feature-icon">🏆</div>
 
                     <h3>MASTER SCUBA</h3>
 
                     <p>
                         Discover the secrets hidden in the
-                        deepest parts of the ocean.
+                        deepest parts of the ocean with
+                        advanced diving programs.
                     </p>
 
-                    <button>FIND OUT MORE</button>
+                    <button class="btn-outline">FIND OUT MORE</button>
 
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TESTIMONIALS -->
+
+        <section class="section">
+
+            <span class="section-subtitle appear">What Divers Say</span>
+
+            <h1 class="appear">Trusted By Thousands</h1>
+
+            <div class="testimonials-wrapper appear">
+
+                <div class="testimonial-card active-testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "An absolutely unforgettable experience. Swimming alongside sea turtles in crystal clear waters was a dream come true. The instructors were professional and caring."
+                    </p>
+                    <div class="testimonial-author">Maria González</div>
+                    <div class="testimonial-role">Adventure Diver</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "The coral reef dive was spectacular. I've never seen such vibrant colors underwater. Ocean Dive made everything seamless from booking to the actual experience."
+                    </p>
+                    <div class="testimonial-author">James Richardson</div>
+                    <div class="testimonial-role">Open Water Certified</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "I was terrified of deep water, but the team at Ocean Dive gave me confidence. Now I'm a certified diver and I've completed over 20 dives worldwide!"
+                    </p>
+                    <div class="testimonial-author">Sofia Park</div>
+                    <div class="testimonial-role">Master Scuba Diver</div>
+                </div>
+
+                <div class="testimonial-dots">
+                    <button class="testimonial-dot active-dot" aria-label="Testimonial 1"></button>
+                    <button class="testimonial-dot" aria-label="Testimonial 2"></button>
+                    <button class="testimonial-dot" aria-label="Testimonial 3"></button>
                 </div>
 
             </div>
@@ -170,22 +280,26 @@
             <img
             class="appear"
             src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?q=80&w=1000"
-            alt="Jason Carrela buceando en una cueva submarina">
+            alt="Jason Carrela exploring an underwater cave with diving equipment">
 
             <div class="interview-text appear">
+
+                <span class="section-subtitle">Featured Diver</span>
 
                 <h1>Jason Carrela</h1>
 
                 <p>
-                    Diving into the deep sea reveals
+                    "Diving into the deep sea reveals
                     a completely different world filled
-                    with mystery and beauty.
+                    with mystery and beauty that few
+                    people ever get to experience."
                 </p>
 
                 <p>
-                    Discover underwater caves,
+                    "Discover underwater caves,
                     coral reefs and marine creatures
-                    in unforgettable adventures.
+                    in unforgettable adventures that
+                    will change your perspective forever."
                 </p>
 
                 <button>
@@ -205,124 +319,92 @@
                 <h1>DOWN IN THE DEEP</h1>
 
                 <button>
-                    WATCH VIDEO
+                    ▶ WATCH VIDEO
                 </button>
 
             </div>
 
         </section>
 
+        <!-- NEWSLETTER -->
+
+        <section class="newsletter">
+
+            <h2 class="appear">Stay in the Current</h2>
+            <p class="appear">Subscribe to get the latest diving news, exclusive offers, and ocean updates.</p>
+
+            <div class="newsletter-form appear">
+                <input type="email" placeholder="Enter your email address" aria-label="Email address">
+                <button>SUBSCRIBE</button>
+            </div>
+
+        </section>
+
         </main>
-
-        <section class="section">
-
-    <h1 class="appear">What Our Divers Say</h1>
-
-    <!-- VIDEO -->
-
-<section class="video">
-
-    <div class="video-box appear">
-
-        <h1>DOWN IN THE DEEP</h1>
-
-        <button>
-            WATCH VIDEO
-        </button>
-
-    </div>
-
-</section>
-
-<!-- TESTIMONIALS -->
-
-<section class="section">
-
-    <h1 class="appear">
-        What Our Divers Say
-    </h1>
-
-    <div class="features">
-
-        <div class="feature testimonial appear">
-
-            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sarah Johnson">
-
-            <h3>Sarah Johnson</h3>
-
-            <p>
-                "One of the best experiences of my life.
-                The instructors were professional and the
-                underwater views were breathtaking."
-            </p>
-
-            <span>★★★★★</span>
-
-        </div>
-
-        <div class="feature testimonial appear">
-
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Brown">
-
-            <h3>Michael Brown</h3>
-
-            <p>
-                "Swimming with dolphins was unforgettable.
-                Everything was perfectly organized from start
-                to finish."
-            </p>
-
-            <span>★★★★★</span>
-
-        </div>
-
-        <div class="feature testimonial appear">
-
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emily Carter">
-
-            <h3>Emily Carter</h3>
-
-            <p>
-                "The coral reef dive exceeded all my expectations.
-                I can't wait to come back next year."
-            </p>
-
-            <span>★★★★★</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer id="help">
-
-</section>
 
         <!-- FOOTER -->
 
         <footer id="help">
 
-            <div class="logo">
-                OCEAN
+            <div class="footer-content">
+
+                <div class="footer-brand">
+                    <div class="logo">OCEAN</div>
+                    <p>Premium diving experiences around the world. Explore the ocean like never before with our expert team.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">ig</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#packages">Packages</a></li>
+                            <li><a href="catalogo.html">Catalog</a></li>
+                            <li><a href="#locations">Locations</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Safety</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
 
-            <ul>
-
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#packages">PACKAGES</a></li>
-                <li><a href="Locations.html">LOCATIONS</a></li>
-                <li><a href="#help">HELP</a></li>
-
-            </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ocean Dive. All rights reserved.</p>
+                <p>Crafted with 🌊 by the Ocean Team</p>
+            </div>
 
         </footer>
 
     </div>
+
+    <!-- SCRIPT -->
 
     <script src="script.js"></script>
 

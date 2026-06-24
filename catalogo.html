@@ -4,15 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo - Ocean Dive</title>
+    <title>Catalog — Ocean Dive Packages</title>
+    <meta name="description" content="Browse our complete catalog of premium diving experiences. From turtle encounters to night reef safaris, find your perfect underwater adventure.">
+    <meta property="og:title" content="Catalog — Ocean Dive Packages">
+    <meta property="og:description" content="Explore all diving packages available at Ocean Dive.">
+
     <link rel="stylesheet" href="stylesmar.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 </head>
 
 <body>
 
+    <!-- PRELOADER -->
+
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo">OCEAN</div>
+            <div class="preloader-bar"></div>
+        </div>
+    </div>
+
+    <!-- PARTICLE BACKGROUND -->
+
+    <canvas id="particleCanvas"></canvas>
+
     <div class="container">
 
         <header>
+
+            <!-- NAVBAR -->
 
             <nav>
 
@@ -20,31 +40,46 @@
                     OCEAN
                 </div>
 
+                <div class="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
                 <ul>
                     <li><a href="indexmar.html">HOME</a></li>
-                    <li><a href="catalogo.html" class="active">PACKAGES</a></li>
-                    <li><a href="#">LOCATIONS</a></li>
-                    <li><a href="#">HELP</a></li>
+                    <li><a href="#" class="active">CATALOG</a></li>
+                    <li><a href="indexmar.html#locations">LOCATIONS</a></li>
+                    <li><a href="indexmar.html#help">HELP</a></li>
                 </ul>
 
             </nav>
+
+            <!-- MOBILE OVERLAY -->
+
+            <div class="mobile-overlay"></div>
+
+            <!-- HERO -->
 
             <div class="hero">
 
                 <div class="hero-text appear">
 
+                    <span class="hero-subtitle">Premium Experiences</span>
+
                     <h1>Our Packages</h1>
 
                     <p>
                         Explore our complete catalog of diving experiences
-                        and find the perfect adventure for you.
+                        and find the perfect adventure for you. From beginner
+                        snorkeling to advanced deep-sea exploration.
                     </p>
 
                 </div>
 
                 <div class="hero-image appear">
 
-                    <img src="https://i.pinimg.com/1200x/43/7f/3a/437f3a5a247198e8c4440a839f304f4a.jpg">
+                    <img src="https://i.pinimg.com/1200x/43/7f/3a/437f3a5a247198e8c4440a839f304f4a.jpg" alt="Scuba diver descending into deep blue ocean">
 
                 </div>
 
@@ -52,88 +87,102 @@
 
         </header>
 
+        <main>
+
+        <!-- SEARCH -->
+
         <section class="search-section section">
 
             <div class="search-bar appear">
-                <input type="text" id="searchInput" placeholder="Search packages...">
+                <input type="text" id="searchInput" placeholder="🔍 Search packages by name or description..." aria-label="Search packages">
                 <button id="searchBtn">SEARCH</button>
             </div>
 
         </section>
 
+        <!-- FILTERS -->
+
         <section class="filters section">
 
-            <h2 class="appear">Filter by category</h2>
+            <span class="section-subtitle appear">Browse By Category</span>
 
             <div class="filter-options appear">
                 <button class="filter-btn active" data-filter="all">ALL</button>
-                <button class="filter-btn" data-filter="turtles">TURTLES</button>
-                <button class="filter-btn" data-filter="jellyfish">JELLYFISH</button>
-                <button class="filter-btn" data-filter="dolphins">DOLPHINS</button>
-                <button class="filter-btn" data-filter="reef">REEF</button>
+                <button class="filter-btn" data-filter="turtles">🐢 TURTLES</button>
+                <button class="filter-btn" data-filter="jellyfish">🪼 JELLYFISH</button>
+                <button class="filter-btn" data-filter="dolphins">🐬 DOLPHINS</button>
+                <button class="filter-btn" data-filter="reef">🪸 REEF</button>
             </div>
 
         </section>
+
+        <!-- CATALOG GRID -->
 
         <section class="catalog-grid section">
 
             <div class="grid" id="catalogGrid">
 
                 <div class="catalog-card appear" data-category="turtles">
-                    <img src="https://i.pinimg.com/736x/2a/1e/34/2a1e3447a825eedd2b72d2a972712b51.jpg">
+                    <span class="category-badge">Turtles</span>
+                    <img src="https://i.pinimg.com/736x/2a/1e/34/2a1e3447a825eedd2b72d2a972712b51.jpg" alt="Green sea turtle swimming through sunlit water">
                     <div class="catalog-info">
                         <h3>Sea Turtle Encounter</h3>
-                        <p>Swim alongside majestic sea turtles in their natural habitat.</p>
+                        <p>Swim alongside majestic sea turtles in their natural habitat with expert marine biologists guiding you.</p>
                         <span class="price">$149</span>
                         <button>BOOK NOW</button>
                     </div>
                 </div>
 
                 <div class="catalog-card appear" data-category="jellyfish">
-                    <img src="https://i.pinimg.com/1200x/53/8d/59/538d592fab705a8e63eab82848c319d8.jpg">
+                    <span class="category-badge">Jellyfish</span>
+                    <img src="https://i.pinimg.com/1200x/53/8d/59/538d592fab705a8e63eab82848c319d8.jpg" alt="Ethereal jellyfish glowing in dark ocean water">
                     <div class="catalog-info">
                         <h3>Jellyfish Lagoon</h3>
-                        <p>Explore a glowing lagoon filled with harmless jellyfish.</p>
+                        <p>Explore a glowing lagoon filled with harmless jellyfish in one of the most unique dives on Earth.</p>
                         <span class="price">$199</span>
                         <button>BOOK NOW</button>
                     </div>
                 </div>
 
                 <div class="catalog-card appear" data-category="dolphins">
-                    <img src="https://i.pinimg.com/1200x/87/49/9a/87499affbb05820a951a0f6f8604897f.jpg">
+                    <span class="category-badge">Dolphins</span>
+                    <img src="https://i.pinimg.com/1200x/87/49/9a/87499affbb05820a951a0f6f8604897f.jpg" alt="Playful dolphins swimming in formation underwater">
                     <div class="catalog-info">
                         <h3>Dolphin Swim</h3>
-                        <p>Experience the thrill of swimming with wild dolphins.</p>
+                        <p>Experience the thrill of swimming with wild dolphins in the open ocean. A truly magical encounter.</p>
                         <span class="price">$249</span>
                         <button>BOOK NOW</button>
                     </div>
                 </div>
 
                 <div class="catalog-card appear" data-category="reef">
-                    <img src="https://i.pinimg.com/1200x/d3/a7/e3/d3a7e33d2753143dc1bc230e07a75086.jpg">
+                    <span class="category-badge">Reef</span>
+                    <img src="https://i.pinimg.com/1200x/d3/a7/e3/d3a7e33d2753143dc1bc230e07a75086.jpg" alt="Colorful coral reef with tropical fish swimming around">
                     <div class="catalog-info">
                         <h3>Coral Reef Dive</h3>
-                        <p>Discover vibrant coral reefs teeming with marine life.</p>
+                        <p>Discover vibrant coral reefs teeming with marine life in the most biodiverse underwater ecosystems.</p>
                         <span class="price">$179</span>
                         <button>BOOK NOW</button>
                     </div>
                 </div>
 
                 <div class="catalog-card appear" data-category="turtles">
-                    <img src="https://i.pinimg.com/736x/2a/1e/34/2a1e3447a825eedd2b72d2a972712b51.jpg">
+                    <span class="category-badge">Turtles</span>
+                    <img src="https://i.pinimg.com/736x/2a/1e/34/2a1e3447a825eedd2b72d2a972712b51.jpg" alt="Baby sea turtles in a protected nursery habitat">
                     <div class="catalog-info">
                         <h3>Nursery Visit</h3>
-                        <p>Visit a protected sea turtle nursery and learn about conservation.</p>
+                        <p>Visit a protected sea turtle nursery and learn about conservation efforts saving these ancient creatures.</p>
                         <span class="price">$99</span>
                         <button>BOOK NOW</button>
                     </div>
                 </div>
 
                 <div class="catalog-card appear" data-category="reef">
-                    <img src="https://i.pinimg.com/1200x/d3/a7/e3/d3a7e33d2753143dc1bc230e07a75086.jpg">
+                    <span class="category-badge">Reef</span>
+                    <img src="https://i.pinimg.com/1200x/d3/a7/e3/d3a7e33d2753143dc1bc230e07a75086.jpg" alt="Night view of bioluminescent coral reef life">
                     <div class="catalog-info">
                         <h3>Night Reef Safari</h3>
-                        <p>See the reef come alive at night with a guided torchlight tour.</p>
+                        <p>See the reef come alive at night with a guided torchlight tour. Witness nocturnal marine creatures in action.</p>
                         <span class="price">$219</span>
                         <button>BOOK NOW</button>
                     </div>
@@ -143,22 +192,70 @@
 
         </section>
 
+        <!-- NEWSLETTER -->
+
+        <section class="newsletter">
+            <h2 class="appear">Don't Miss a Dive</h2>
+            <p class="appear">Get exclusive offers and new package announcements delivered to your inbox.</p>
+            <div class="newsletter-form appear">
+                <input type="email" placeholder="Enter your email address" aria-label="Email address">
+                <button>SUBSCRIBE</button>
+            </div>
+        </section>
+
+        </main>
+
+        <!-- FOOTER -->
+
         <footer>
 
-            <div class="logo">
-                OCEAN
+            <div class="footer-content">
+
+                <div class="footer-brand">
+                    <div class="logo">OCEAN</div>
+                    <p>Premium diving experiences around the world. Explore the ocean like never before.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">ig</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="indexmar.html">Home</a></li>
+                            <li><a href="#">Catalog</a></li>
+                            <li><a href="indexmar.html#locations">Locations</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Safety</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
 
-            <ul>
-                <li><a href="indexmar.html">HOME</a></li>
-                <li><a href="catalogo.html">PACKAGES</a></li>
-                <li><a href="#">LOCATIONS</a></li>
-                <li><a href="#">HELP</a></li>
-            </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ocean Dive. All rights reserved.</p>
+                <p>Crafted with 🌊 by the Ocean Team</p>
+            </div>
 
         </footer>
 
     </div>
+
+    <!-- SCRIPT -->
 
     <script src="script.js"></script>
 
