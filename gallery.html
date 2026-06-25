@@ -7,6 +7,88 @@
     <link rel="stylesheet" href="stylesmar.css">
 </head>
 
+<style>
+/* =========================
+   GALLERY PAGE
+========================= */
+
+.gallery-title {
+    text-align: center;
+    margin: 60px 0 20px;
+}
+
+.gallery-title h1 {
+    font-size: 70px;
+    letter-spacing: 4px;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.gallery-title p {
+    max-width: 700px;
+    margin: 20px auto;
+    color: #c4d7ff;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 40px;
+}
+
+.gallery-card {
+    background: #010c24;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+    border-color: #4dd9ff;
+    box-shadow: 0 0 25px rgba(77, 217, 255, 0.4);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-card h3 {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.gallery-card p {
+    text-align: center;
+    color: #c4d7ff;
+    padding: 0 20px 20px;
+    line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .gallery-title h1 {
+        font-size: 45px;
+    }
+
+    .gallery-grid {
+        padding: 20px;
+    }
+}
+
+</style>
 <body>
 
 <div class="container">
