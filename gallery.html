@@ -5,90 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - Ocean Dive</title>
     <link rel="stylesheet" href="stylesmar.css">
+
+    <style>
+    /* =====================================================
+       GALLERY PAGE STYLES
+       Clases alineadas con el HTML real: .section, .cards, .card
+       =====================================================
+
+       Índice:
+       1. Hero / título de sección
+       2. Grid de la galería (cards)
+       3. Animación de aparición (appear)
+       4. Responsive
+    ===================================================== */
+
+    /* ---------- 1. HERO / TÍTULO DE SECCIÓN ---------- */
+
+    .section-title {
+        text-align: center;
+        margin: 60px 0 20px;
+    }
+
+    .section-title h1 {
+        font-size: 70px;
+        letter-spacing: 4px;
+        font-weight: 300;
+        color: #ffffff;
+    }
+
+    .section-title p {
+        max-width: 700px;
+        margin: 20px auto;
+        color: #c4d7ff;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    /* ---------- 2. GRID DE LA GALERÍA (CARDS) ---------- */
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        padding: 40px;
+    }
+
+    .card {
+        background: #010c24;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+        cursor: pointer;
+        border: 1px solid transparent;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        border-color: #4dd9ff;
+        box-shadow: 0 0 25px rgba(77, 217, 255, 0.4);
+    }
+
+    .card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .card h2 {
+        text-align: center;
+        padding: 20px;
+        color: white;
+        letter-spacing: 2px;
+        font-size: 20px;
+    }
+
+    .card p {
+        text-align: center;
+        color: #c4d7ff;
+        padding: 0 20px 20px;
+        line-height: 1.6;
+    }
+
+    /* ---------- 3. ANIMACIÓN DE APARICIÓN (.appear) ----------
+       Estado inicial: oculto y desplazado hacia abajo.
+       El JS al final del documento agrega la clase "in-view"
+       cuando el elemento entra en el viewport (IntersectionObserver).
+    */
+
+    .appear {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .appear.in-view {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* ---------- 4. RESPONSIVE ---------- */
+
+    @media (max-width: 768px) {
+        .section-title h1 {
+            font-size: 45px;
+        }
+
+        .cards {
+            padding: 20px;
+        }
+    }
+    </style>
 </head>
 
-<style>
-/* =========================
-   GALLERY PAGE
-========================= */
-
-.gallery-title {
-    text-align: center;
-    margin: 60px 0 20px;
-}
-
-.gallery-title h1 {
-    font-size: 70px;
-    letter-spacing: 4px;
-    font-weight: 300;
-    color: #ffffff;
-}
-
-.gallery-title p {
-    max-width: 700px;
-    margin: 20px auto;
-    color: #c4d7ff;
-    line-height: 1.8;
-    font-size: 16px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    padding: 40px;
-}
-
-.gallery-card {
-    background: #010c24;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.4s;
-    cursor: pointer;
-    border: 1px solid transparent;
-}
-
-.gallery-card:hover {
-    transform: translateY(-10px);
-    border-color: #4dd9ff;
-    box-shadow: 0 0 25px rgba(77, 217, 255, 0.4);
-}
-
-.gallery-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery-card h3 {
-    text-align: center;
-    padding: 20px;
-    color: white;
-    letter-spacing: 2px;
-    font-size: 20px;
-}
-
-.gallery-card p {
-    text-align: center;
-    color: #c4d7ff;
-    padding: 0 20px 20px;
-    line-height: 1.6;
-}
-
-/* Responsive */
-
-@media (max-width: 768px) {
-    .gallery-title h1 {
-        font-size: 45px;
-    }
-
-    .gallery-grid {
-        padding: 20px;
-    }
-}
-
-</style>
 <body>
 
 <div class="container">
@@ -108,10 +137,10 @@
 
     <!-- HERO -->
 
-    <section class="section">
-        <h1 class="appear">Ocean Gallery</h1>
+    <section class="section section-title appear">
+        <h1>Ocean Gallery</h1>
 
-        <p style="text-align:center; max-width:700px; margin:auto;">
+        <p>
             Explore stunning underwater landscapes, marine wildlife,
             and unforgettable diving adventures from around the world.
         </p>
@@ -122,32 +151,32 @@
     <section class="cards">
 
         <article class="card appear">
-            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800" alt="Blue Hole dive site">
             <h2>Blue Hole</h2>
         </article>
 
         <article class="card appear">
-            <img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?w=800" alt="">
+            <img src="https://images.unsplash.com/photo-1524704654690-b56c05c78a00?w=800" alt="Deep cave diving">
             <h2>Deep Cave</h2>
         </article>
 
         <article class="card appear">
-            <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800" alt="">
+            <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800" alt="Marine life underwater">
             <h2>Marine Life</h2>
         </article>
 
         <article class="card appear">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="Tropical waters">
             <h2>Tropical Waters</h2>
         </article>
 
         <article class="card appear">
-            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="">
+            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Coral reef">
             <h2>Coral Reef</h2>
         </article>
 
         <article class="card appear">
-            <img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=800" alt="">
+            <img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=800" alt="Ocean adventure">
             <h2>Ocean Adventure</h2>
         </article>
 
@@ -169,6 +198,30 @@
     </footer>
 
 </div>
+
+<script>
+    /* =====================================================
+       SCROLL REVEAL (.appear)
+       Usa IntersectionObserver para agregar "in-view" a los
+       elementos con clase .appear cuando entran en pantalla.
+    ===================================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+        const appearElements = document.querySelectorAll('.appear');
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    obs.unobserve(entry.target); // se anima una sola vez
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        appearElements.forEach(el => observer.observe(el));
+    });
+</script>
 
 </body>
 </html>
